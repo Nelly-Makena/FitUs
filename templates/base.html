@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Nelly Makena ">
+
+    {% block title %}
+    <title>FitUs--keep fit with Us</title>
+    {% endblock %}
+
+    <!--  CSS -->
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+ {% block 'header' %}
+ <nav>
+        <div class="logo">
+            <img src="{% static 'Images/logo.png' %}" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Training</a></li>
+            <li><a href="#">Nutrition</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Shop</a></li>
+        </ul>
+        <div class="nav-right">
+            <span class="hide-on-mobile">EN</span>
+            <a href="#" class="login">Log In</a>
+            <a href="#" class="start-now hide-on-mobile">Start now →</a>
+        </div>
+        <div class="hamburger">☰</div>
+    </nav>
+
+    <script>
+        // Responsive navbar toggle
+        document.querySelector(".hamburger").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+            document.querySelector(".nav-right").classList.toggle("active");
+        });
+    </script>
+    {% endblock %}
+
+
+    <!-- Add this block to include the body content from child templates -->
+    {% block body %}
+    {% endblock %}
+
+    <!-- Footer block, can be overridden in child templates -->
+
+</body>
+</html>
