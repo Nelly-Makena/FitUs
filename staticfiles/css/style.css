@@ -1,39 +1,65 @@
-/*base html*/
- /* General Reset */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif !important; /* Ensures font style */
+
 }
 
 /* Navbar Styles */
 nav {
-    background-color:#263238; /* Darker grey */
+    background-color: #263238;
     height: 80px;
     display: flex;
     align-items: center;
-    padding: 0 1rem;
+    justify-content: flex-start; /* Pushes items slightly left */
+    padding: 0 1.5rem;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
 }
 
 /* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 18rem;
+
+}
+
 .logo img {
     height: 55px;
-    margin-left: 20rem;
+    margin-right: 1.5rem;
+}
+
+/* Navigation Container */
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
 /* Navigation Links */
 .nav-links {
     display: flex;
     gap: 25px;
-    margin-left: 1rem;
     list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure all links are displayed properly */
+.nav-links li {
+    display: inline-block;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: white;
-    font-size: 18px; /* Increased font size */
-    font-weight: 600; /* Increased font weight */
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /* Right Side */
@@ -58,6 +84,7 @@ nav {
     border-radius: 5px;
     font-weight: bold;
     text-decoration: none;
+    margin-right: 6rem;
 }
 
 /* Hamburger Menu */
@@ -68,36 +95,145 @@ nav {
     cursor: pointer;
 }
 
-/* Hide Elements on Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links, .nav-right {
+    nav {
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+    .logo {
+    margin-left: 1rem;
+
+    }
+    .start-now {
+    margin-right: 0rem;
+    }
+
+
+    /* Mobile Menu */
+    .nav-links,
+    .nav-right {
         display: none;
         flex-direction: column;
+        align-items: flex-start;
         width: 100%;
-        text-align: center;
+        text-align: left;
         background-color: #455a64;
         position: absolute;
         top: 80px;
         left: 0;
-        padding: 15px 0;
+        padding: 15px;
     }
 
-    .nav-links.active, .nav-right.active {
+    .nav-links.active,
+    .nav-right.active {
         display: flex;
+    }
+
+    .nav-links {
+        gap: 10px;
+        position: relative;
+        z-index: 10;
     }
 
     .hamburger {
         display: block;
         margin-left: auto;
-        margin-right:1rem;
+        margin-right: 1rem;
     }
 
-    /* Hide EN and Get Started on Mobile */
-    .hide-on-mobile {
-        display: none;
-    }
-    .logo img {
-       margin-left:0rem;
+    /* Ensure all links show up on mobile */
+    .nav-links li {
+        display: block;
     }
 
+    /* Move Log In to the bottom */
+    .nav-right {
+        order: 99;
+        width: 100%;
+    }
+
+    .nav-right .login {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+        text-align: left;
+        display: none !important;
+    }
+    .nav-right span, /* Hide "EN" */
+    .start-now {  /* Hide "Start Now" */
+    display: none !important;
+}
+}
+
+/* Home styling */
+.video-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+.video-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the 0.5 for more or less darkness */
+    z-index: 2;
+}
+.hero-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    max-width: 700px; /* Keeps content compact */
+    width: 90%;
+    z-index: 3;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 1.5px; /* Added letter spacing */
+}
+
+.hero-section p {
+    font-size: 1.2rem; /* Increased font size */
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    letter-spacing: 1px; /* Slightly increased spacing */
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #ddd;
 }

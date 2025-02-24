@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block body %}
- <video>
-        <source src="{% static 'Videos/gym_vid' %}" type="video/mp4">
-    </video>
+ <div class="video-container">
+        <video autoplay loop muted playsinline id="background-video">
+            <source src="{% static 'Vedios/gym_vid.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+<section class="hero-section">
+    <h1>Supercharge Your Fitness.<br>Stay Consistent.<br>Get Results.</h1>
+    <p>Freeletics harnesses the power of AI and the expertise of human scientists to generate the best workout plan for you.</p>
+    <a href="#" class="cta-button">Get your personalized training plan now →</a>
+</section>
+
 {% endblock %}
