@@ -237,3 +237,208 @@ nav {
 .cta-button:hover {
     background: #ddd;
 }
+
+
+.fitness-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: #263238;
+    position: relative;
+    overflow: visible;
+
+
+}
+
+.phone-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -120px; 
+    z-index: 5; 
+    max-height: 600px;
+}
+
+.phone-container img {
+    width: 300px; /* Slightly increased size */
+    border-radius: 40px; /* More curved for a phone shape */
+    border: 10px solid black; /* More visible border */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+}
+
+
+
+.text-container {
+    max-width:1000px;
+    margin-left: 50px;
+}
+
+.text-container h2 {
+    font-size: 40px;
+    color: #ff7f32;
+    line-height: 1.0;
+    font-weight: 300;
+    letter-spacing: 3px; 
+    margin-bottom: 4.5rem;
+    margin-top: 2rem;
+}
+
+.text-container h2 span {
+    font-size: 40px;
+    color: #ff7f32;
+    line-height: 1.0;
+    font-weight: 300;
+    letter-spacing: 3px; 
+    margin-bottom: 4.5rem;
+    margin-top: 2rem;
+}
+
+.stats {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 3rem;
+
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats h3 {
+    font-size: 30px;
+    color: white;
+    font-weight: 200;
+    letter-spacing:0.5px;
+    margin-bottom: 1rem;
+}
+
+.stats p {
+    font-size: 14px;
+    color:#78909c;
+    line-height: 0.9;
+    font-weight: 200;
+
+}
+.vertical-line {
+    border-left: 0.4px solid #78909c; 
+    height: 60px; 
+  }
+  
+
+.reviews-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 50px;
+
+}
+
+.review {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.column{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stars {
+    color: #f4b400;
+    font-size: 24px;
+}
+
+.review p {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.review img {
+    width: 70px;
+    height:100px ;
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+.review img.rotated-leaf {
+    transform: scaleX(-1); 
+  }
+
+.review span {
+    font-size: 20px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+#testimonial-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    color: #fff;
+    background-color: #263238;
+
+}
+
+
+#testimonial-1, #testimonial-2 {
+    margin: 0 20px;
+    padding: 20px;
+    margin-right: 5rem;
+    margin-left: 5rem;
+}
+
+/* More specific heading styles */
+#testimonial-title-1, #testimonial-title-2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+
+}
+
+/* More specific paragraph styles */
+#testimonial-text-1, #testimonial-text-2 {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom:2.5rem;
+   
+}
+
+#profile-1, #profile-2 {
+    display: flex;
+    align-items: center;
+}
+#profile-1, #profile-2 span{
+   
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    
+}
+#profile-1 img, #profile-2 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-right: 1.5rem;
+}
+
+#prev-btn, #next-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+#prev-btn{
+    margin-left: 15rem;
+}
+#next-btn{
+    margin-right: 15rem;
+
+}
