@@ -4,7 +4,7 @@
 {% block body %}
  <div class="video-container">
         <video autoplay loop muted playsinline id="background-video">
-            <source src="{% static 'Vedios/gym_vid.mp4' %}" type="video/mp4">
+            <source src="{% static 'Vedios/gym.mp4' %}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -65,24 +65,26 @@
         <button id="prev-btn">&#10094;</button>
 
         <div id="testimonial-1">
-
-            <h3 id="testimonial-title-1">Great app!</h3>
-            <p id="testimonial-text-1">“ It makes you feel motivated to keep up a sporty lifestyle. Workouts are adaptable and always push your limits. It is even better with friends because you see their progression. ”</p>
+            <h3 id="testimonial-title-1"></h3>
+            <p id="testimonial-text-1"></p>
             <div id="profile-1">
-                <img src="{% static 'Images/gabor.jpeg' %}" alt="User 1">
-                <span>Gabor Talpai</span>
+                <img id="profile-img-1" src="" alt="User 1">
+                <span id="profile-name-1"></span>
             </div>
         </div>
+
         <div id="testimonial-2">
-            <h3 id="testimonial-title-2">No more gym</h3>
-            <p id="testimonial-text-2">" By far the best app for bodyweight workouts. Since the beginning of the pandemic, I have switched my training to Freeletics and will no longer enter a gym in the future.  "</p>
+            <h3 id="testimonial-title-2"></h3>
+            <p id="testimonial-text-2"></p>
             <div id="profile-2">
-                <img src="{% static 'Images/Olloni.jpeg' %}" alt="User 2">
-                <span>Mirvjen Olloni</span>
+                <img id="profile-img-2" src="" alt="User 2">
+                <span id="profile-name-2"></span>
             </div>
         </div>
+
         <button id="next-btn">&#10095;</button>
     </div>
 
 </section>
+<script src="{% static 'js/testimonials.js' %}"></script>
 {% endblock %}
