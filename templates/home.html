@@ -4,7 +4,7 @@
 {% block body %}
  <div class="video-container">
         <video autoplay loop muted playsinline id="background-video">
-            <source src="{% static 'Vedios/gym.mp4' %}" type="video/mp4">
+            <source src="{% static 'Vedios/gyym.mp4' %}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -17,8 +17,8 @@
         <div class="phone-container">
             <img src="{% static 'Vedios/repay.mp4' %}" alt="Fitness App Screen">
         </div>
-        <se class="text-container">
-            <h2>Digital fitness coaching <br> <span>trusted by 59 million users</span></h2>
+        <div class="text-container">
+            <h2>Digital fitness coaching  <span>trusted by 59 million users</span></h2>
             <div class="stats">
                 <div>
                     <h3>450 M+</h3>
@@ -86,5 +86,35 @@
     </div>
 
 </section>
-<script src="{% static 'js/testimonials.js' %}"></script>
+
+<section class="transformation-section">
+        <div class="text-content">
+            <h1>Dare to be you</h1>
+            <p>No excuses, great results. Free Athletes prove it.</p>
+        </div>
+
+        <div class="gallery">
+            <div class="card">
+
+                <img src="{% static 'Images/after_gadula.jpeg' %}" class="toggle-img" data-before="{% static 'Images/before_gadula.jpeg' %}" data-after="{% static 'Images/after_gadula.jpeg' %}" alt="Fitness Image">
+                <h3>GUNDULA,<span>37</span></h3>
+                <p>After training and dieting with Freeletics</p>
+            </div>
+            <div class="card">
+                <img src="{% static 'Images/after_patrick.jpeg' %}" class="toggle-img" data-before="{% static 'Images/before_patric.jpeg' %}" data-after="{% static 'Images/after_patrick.jpeg' %}" alt="Fitness Image">
+                <h3>PATRIC, <span>33</span></h3>
+                <p>After training and dieting with Freeletics</p>
+            </div>
+            <div class="card">
+               <img src="{% static 'Images/after_macej.jpeg' %}" class="toggle-img" data-before="{% static 'Images/before_macej.jpeg' %}" data-after="{% static 'Images/after_macej.jpeg' %}" alt="Fitness Image">
+                <h3>MACIEJ, <span>35</span></h3>
+                <p>After training and dieting with Freeletics</p>
+            </div>
+        </div>
+
+        <div class="cta-container">
+            <button class="join-button">Become a Free Athlete →</button>
+        </div>
+    </section>
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

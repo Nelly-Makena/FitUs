@@ -191,7 +191,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Almost fully black */
+    background: rgba(0, 0, 0, 0.5); /* Almost fully black */
 
     z-index: 2;
 }
@@ -276,21 +276,23 @@ nav {
 .text-container h2 {
     font-size: 40px;
     color: #ff7f32;
-    line-height: 1.0;
+    line-height: 1.2;
     font-weight: 300;
     letter-spacing: 3px; 
     margin-bottom: 4.5rem;
     margin-top: 2rem;
+    width: 60%;
 }
 
 .text-container h2 span {
     font-size: 40px;
     color: #ff7f32;
-    line-height: 1.0;
+    line-height: 1.2;
     font-weight: 300;
     letter-spacing: 3px; 
     margin-bottom: 4.5rem;
     margin-top: 2rem;
+    width: 60%;
 }
 
 .stats {
@@ -443,109 +445,99 @@ nav {
     margin-right: 15rem;
 
 }
-/* For screens smaller than 1024px (Tablets) */
-@media (max-width: 1024px) {
-    .fitness-section {
-        flex-direction: column;
-        padding: 30px;
-    }
-
-    .text-container {
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .reviews-section {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    #testimonial-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #prev-btn, #next-btn {
-        font-size: 24px;
-        margin: 10px 0;
-    }
+.transformation-section {
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    background-color: #263238;
 }
 
-/* For screens smaller than 768px (Mobile devices) */
-@media (max-width: 768px) {
-    .phone-container img {
-        width: 200px;
-        border-radius: 30px;
-    }
-
-    .text-container h2 {
-        font-size: 30px;
-        margin-bottom: 2rem;
-    }
-
-    .stats h3 {
-        font-size: 24px;
-    }
-
-    .stats p {
-        font-size: 12px;
-    }
-
-    .reviews-section {
-        gap: 10px;
-    }
-
-    .review p {
-        font-size: 16px;
-    }
-
-    #testimonial-section {
-        padding: 30px;
-    }
-
-    #prev-btn, #next-btn {
-        font-size: 20px;
-    }
+.text-content {
+    margin-bottom: 5rem;
+    text-align: center;
 }
 
-/* For screens smaller than 480px (Small mobile devices) */
-@media (max-width: 480px) {
-    .phone-container img {
-        width: 150px;
-        border-radius: 20px;
-    }
-
-    .text-container h2 {
-        font-size: 24px;
-    }
-
-    .stats h3 {
-        font-size: 20px;
-    }
-
-    .stats p {
-        font-size: 10px;
-    }
-
-    .reviews-section {
-        gap: 5px;
-    }
-
-    .review p {
-        font-size: 14px;
-    }
-
-    #testimonial-section {
-        padding: 20px;
-    }
-
-    #prev-btn, #next-btn {
-        font-size: 18px;
-    }
+.text-content h1 {
+    font-size: 3rem;  /* Increased size */
+    font-weight: 900; /* Bolder */
+    letter-spacing: 2px; /* Spacing */
+    line-height: 1.4; /* Increased line height */
+    text-transform: uppercase;
 }
 
+.text-content p {
+    font-size: 1.4rem; /* Increased size */
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 150px; /* Increased gap */
+    flex-wrap: wrap;
+}
+
+.card {
+    text-align: center;
+    max-width: 300px;
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+.card h3{
+    letter-spacing: 1px;
+    font-weight: 400;
+    line-height: 2.5;
+    font-size: 20px;
+}
+.card h3 span{
+    margin-left: 0.5rem;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 2.5;
+
+}
+.card p{
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Make the middle image taller */
+.card:nth-child(2) img {
+    height: 550px; /* Taller than others */
+    object-fit: cover;
+}
+
+/* Call to Action Button */
+.cta-container {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center; /* Center align */
+}
+
+.join-button {
+    background-color: white;
+    color: black;
+    font-size: 1.2rem;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: #d3d3d3;
+}
