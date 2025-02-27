@@ -116,5 +116,58 @@
             <button class="join-button">Become a Free Athlete →</button>
         </div>
     </section>
+<section class="training-app-section">
+    <div class="training-content">
+        <h1 class="training-title">Tailored to you</h1>
+        <p class="training-description">
+            Life is unpredictable. Get the best training app to fit your lifestyle and needs.
+        </p>
+
+        <div class="training-features">
+            <div class="training-feature">
+                <img src="{% static 'Images/time.svg' %}" alt="Time Icon" class="feature-icon">
+                <div>
+                    <h3 class="feature-title">No time to train? We got you.</h3>
+                    <p class="feature-text">
+                        You choose your training days. Have to keep it short today? No problem.
+                    </p>
+                </div>
+            </div>
+            <div class="training-feature">
+                <img src="{% static 'Images/location.svg' %}" alt="Location Icon" class="feature-icon">
+                <div>
+                    <h3 class="feature-title">The best location? Where you are.</h3>
+                    <p class="feature-text">
+                        You choose your training location. Perfect weather for a run?
+                    </p>
+                </div>
+            </div>
+            <div class="training-feature">
+                <img src="{% static 'Images/sit.svg' %}" alt="Workout Icon" class="feature-icon">
+                <div>
+                    <h3 class="feature-title">No more boring workouts.</h3>
+                    <p class="feature-text">
+                        Work out how you want. Your AI Coach has your back.
+                    </p>
+                </div>
+            </div>
+            <div class="training-feature">
+                <img src="{% static 'Images/weight.svg' %}" alt="Exercise Icon" class="feature-icon">
+                <div>
+                    <h3 class="feature-title">Exercises that fit you.</h3>
+                    <p class="feature-text">
+                        Train with the equipment you have and exclude exercises that don’t fit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="training-image-container">
+        <img src="{% static 'Images/pic_1.avif' %}" class="training-image" alt="Training App">
+    </div>
+</section>
+
 <script src="{% static 'js/home.js' %}"></script>
+
 {% endblock %}

@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateTestimonials();
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     let isBefore = false; // Global toggle state for all images
 
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Start one interval for all images (keeps them in sync)
-    let interval = setInterval(toggleAllImages, 2000);
+    let interval = setInterval(toggleAllImages, 1500);
 
     document.querySelectorAll('.toggle-img').forEach(img => {
         // Prevent disappearing issue
@@ -102,7 +103,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Resume switching when cursor leaves
         img.addEventListener('mouseleave', () => {
-            interval = setInterval(toggleAllImages, 2000);
+            interval = setInterval(toggleAllImages, 1500);
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const images = [
+        "/static/Images/pic_1.avif",
+         "/static/Images/pic_2.avif",
+          "/static/Images/pic_3.avif",
+           "/static/Images/pic_4.avif"
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.querySelector('.training-image');
+
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length; // Loop back after the 4th image
+        imgElement.src = images[currentIndex];
+    }
+
+    // Change image every 1 second
+    setInterval(changeImage, 1000);
 });

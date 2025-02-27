@@ -541,3 +541,73 @@ nav {
 .join-button:hover {
     background-color: #d3d3d3;
 }
+.training-app-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Reduce space between left and right */
+    background-color: #263238;
+    color: white;
+    padding: 100px 8%;
+    text-align: left;
+}
+
+.training-content {
+    flex: 1;
+    max-width: 50%;
+    margin-left: 10rem; /* Keep text compact */
+}
+
+.training-title {
+    color: orange;
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 4rem;
+}
+
+.training-description {
+    margin-bottom: 3rem;
+    line-height: 2;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+}
+
+.training-features {
+    margin-top: 30px;
+}
+
+.training-feature {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Keeps icons closer to text */
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.feature-icon {
+    filter: invert(1); /* Turns black SVGs into white */
+    width: 50px; /* Adjust as needed */
+    height: 50px;
+}
+
+.feature-title{
+    font-size: 20px;
+}
+.feature-text {
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 1.2px;
+}
+
+.training-image-container {
+    flex: 1;
+    max-width: 45%; /* Reduce space between left and right */
+    display: flex;
+    justify-content: center;
+}
+
+.training-image {
+    width: 100%; /* Prevent blurriness but still big */
+    max-width: 500px;
+    border-radius: 5px;
+}
