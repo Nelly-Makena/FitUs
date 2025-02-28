@@ -602,7 +602,7 @@ nav {
 .training-image-container {
     flex: 1;
     max-width: 50%;
-    height: 100vh; /* Full height */
+    height: 85vh; /* Full height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -629,5 +629,50 @@ nav {
     background: lightblue;
     width: 0%;
     z-index: 10;
+}
+.footer {
+    background-color: #263238;
+    color: #fff;
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+.footer-logo {
+    flex: 1;
+}
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+.footer-links {
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+}
+.footer-column h4 {
+    color: #aaa;
+    margin-bottom: 10px;
+}
+.footer-column a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.footer-buttons img {
+    width: 140px;
 }
 
