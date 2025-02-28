@@ -541,6 +541,7 @@ nav {
 .join-button:hover {
     background-color: #d3d3d3;
 }
+
 .training-app-section {
     display: flex;
     align-items: center;
@@ -598,16 +599,35 @@ nav {
     line-height: 1.8;
     letter-spacing: 1.2px;
 }
-
 .training-image-container {
     flex: 1;
-    max-width: 45%; /* Reduce space between left and right */
+    max-width: 50%;
+    height: 85vh; /* Full height */
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .training-image {
-    width: 100%; /* Prevent blurriness but still big */
-    max-width: 500px;
-    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images are clear */
+    position: absolute;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 1s ease-out, opacity 0.5s ease-in;
 }
+
+/* Progress bar positioned inside the image container */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: lightblue;
+    width: 0%;
+    z-index: 10;
+}
+

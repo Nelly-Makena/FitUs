@@ -108,22 +108,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const images = [
-        "/static/Images/pic_1.avif",
-         "/static/Images/pic_2.avif",
-          "/static/Images/pic_3.avif",
-           "/static/Images/pic_4.avif"
+        "/static/Images/pic_1.webp",
+        "/static/Images/pic_2.webp",
+        "/static/Images/pic_3.webp",
+        "/static/Images/pic_4.webp"
     ];
 
     let currentIndex = 0;
-    const imgElement = document.querySelector('.training-image');
+    const imgContainer = document.querySelector('.training-image-container');
+
+    // Create progress bar
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar');
+    imgContainer.appendChild(progressBar);
 
     function changeImage() {
-        currentIndex = (currentIndex + 1) % images.length; // Loop back after the 4th image
-        imgElement.src = images[currentIndex];
+        // Create a new image element
+        const newImg = document.createElement('img');
+        newImg.src = images[currentIndex];
+        newImg.classList.add('training-image');
+        imgContainer.appendChild(newImg);
+
+        // Slide the new image in
+        setTimeout(() => {
+            newImg.style.transform = 'translateY(0)';
+            newImg.style.opacity = '1';
+        }, 50);
+
+        // Remove old images to prevent stacking
+        setTimeout(() => {
+            const oldImages = imgContainer.querySelectorAll('.training-image');
+            if (oldImages.length > 1) oldImages[0].remove();
+        }, 1000);
+
+        // Reset and restart progress bar animation
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+
+        setTimeout(() => {
+            progressBar.style.transition = 'width 3s linear';
+            progressBar.style.width = '100%';
+        }, 50); // Small delay to force reflow
+
+        // Move to the next image
+        currentIndex = (currentIndex + 1) % images.length;
     }
 
-    // Change image every 1 second
-    setInterval(changeImage, 1000);
+    // Show the first image immediately
+    changeImage();
+
+    // Change image every 3 seconds
+    setInterval(changeImage, 3000);
 });

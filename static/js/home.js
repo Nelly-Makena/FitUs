@@ -80,17 +80,86 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTestimonials();
 });
 
-document.querySelectorAll('.toggle-img').forEach(img => {
-    img.addEventListener('mouseover', function () {
-        this.src = this.getAttribute('data-before'); // Change to Before Image
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    let isBefore = false; // Global toggle state for all images
 
-    img.addEventListener('mouseout', function () {
-        this.src = this.getAttribute('data-after'); // Revert to After Image
+    function toggleAllImages() {
+        isBefore = !isBefore;
+        document.querySelectorAll('.toggle-img').forEach(img => {
+            img.src = isBefore ? img.getAttribute('data-before') : img.getAttribute('data-after');
+        });
+    }
+
+    // Start one interval for all images (keeps them in sync)
+    let interval = setInterval(toggleAllImages, 1500);
+
+    document.querySelectorAll('.toggle-img').forEach(img => {
+        // Prevent disappearing issue
+        img.addEventListener('mousedown', (e) => e.preventDefault()); // Stops image from disappearing when clicked
+        img.addEventListener('dragstart', (e) => e.preventDefault()); // Stops dragging effect
+
+        // Stop switching when hovering over any image
+        img.addEventListener('mouseenter', () => clearInterval(interval));
+
+        // Resume switching when cursor leaves
+        img.addEventListener('mouseleave', () => {
+            interval = setInterval(toggleAllImages, 1500);
+        });
     });
 });
 
-document.querySelectorAll('.card').forEach(card => {
-    let img = card.querySelector('.toggle-img');
-    card.style.setProperty('--before-image', `url(${img.getAttribute('data-before')})`);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const images = [
+        "/static/Images/pic_1.webp",
+        "/static/Images/pic_2.webp",
+        "/static/Images/pic_3.webp",
+        "/static/Images/pic_4.webp"
+    ];
+
+    let currentIndex = 0;
+    const imgContainer = document.querySelector('.training-image-container');
+
+    // Create progress bar
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar');
+    imgContainer.appendChild(progressBar);
+
+    function changeImage() {
+        // Create a new image element
+        const newImg = document.createElement('img');
+        newImg.src = images[currentIndex];
+        newImg.classList.add('training-image');
+        imgContainer.appendChild(newImg);
+
+        // Slide the new image in
+        setTimeout(() => {
+            newImg.style.transform = 'translateY(0)';
+            newImg.style.opacity = '1';
+        }, 50);
+
+        // Remove old images to prevent stacking
+        setTimeout(() => {
+            const oldImages = imgContainer.querySelectorAll('.training-image');
+            if (oldImages.length > 1) oldImages[0].remove();
+        }, 1000);
+
+        // Reset and restart progress bar animation
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+
+        setTimeout(() => {
+            progressBar.style.transition = 'width 3s linear';
+            progressBar.style.width = '100%';
+        }, 50); // Small delay to force reflow
+
+        // Move to the next image
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    // Show the first image immediately
+    changeImage();
+
+    // Change image every 3 seconds
+    setInterval(changeImage, 3000);
 });
