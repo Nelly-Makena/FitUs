@@ -21,13 +21,16 @@
  {% block 'header' %}
  <nav>
         <div class="logo">
+             <a href="{% url 'UI:home' %}
+">
             <img src="{% static 'Images/logo.png' %}" alt="Logo">
+             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Training</a></li>
+            <li><a href="{% url 'UI:training' %}">Training</a></li>
             <li><a href="#">Nutrition</a></li>
-            <li><a href="#">Blog</a></li>
             <li><a href="#">Shop</a></li>
+            <li><a href="#">Help center</a></li>
         </ul>
         <div class="nav-right">
             <span class="hide-on-mobile">EN</span>

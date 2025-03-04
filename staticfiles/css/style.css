@@ -15,9 +15,10 @@ nav {
     align-items: center;
     justify-content: flex-start; /* Pushes items slightly left */
     padding: 0 1.5rem;
-    position: fixed;
+    position: fixed !important;
     z-index: 1000;
     width: 100%;
+    margin-top: 0 !important;
 }
 
 /* Logo */
@@ -93,77 +94,6 @@ nav {
     font-size: 30px;
     color: white;
     cursor: pointer;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        justify-content: space-between;
-        padding: 0 1rem;
-    }
-    .logo {
-    margin-left: 1rem;
-
-    }
-    .start-now {
-    margin-right: 0rem;
-    }
-
-
-    /* Mobile Menu */
-    .nav-links,
-    .nav-right {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        text-align: left;
-        background-color: #455a64;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        padding: 15px;
-    }
-
-    .nav-links.active,
-    .nav-right.active {
-        display: flex;
-    }
-
-    .nav-links {
-        gap: 10px;
-        position: relative;
-        z-index: 10;
-    }
-
-    .hamburger {
-        display: block;
-        margin-left: auto;
-        margin-right: 1rem;
-    }
-
-    /* Ensure all links show up on mobile */
-    .nav-links li {
-        display: block;
-    }
-
-    /* Move Log In to the bottom */
-    .nav-right {
-        order: 99;
-        width: 100%;
-    }
-
-    .nav-right .login {
-        display: block;
-        padding: 10px 0;
-        width: 100%;
-        text-align: left;
-        display: none !important;
-    }
-    .nav-right span, /* Hide "EN" */
-    .start-now {  /* Hide "Start Now" */
-    display: none !important;
-}
 }
 
 /* Home styling */
