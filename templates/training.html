@@ -118,9 +118,44 @@
         </div>
     </div>
 </section>
+<section class="vedio-gallery-section">
+    <h1 class="vedio-title">Dare to be you</h1>
+    <p class="vedio-description">No excuses, great results. Free Athletes prove it.</p>
+
+    <div class="vedio-gallery">
+        <div class="vedio-item" data-video="https://www.youtube.com/watch?v=video1">
+            <img src="{% static 'Images/vedio_1.jpeg' %}" alt="Before and After">
+            <div class="vedio-overlay">
+                <button class="vedio-play-btn">▶</button>
+                <h3 class="vedio-heading">Get a six pack</h3>
+                <p class="vedio-text">Adem K.</p>
+            </div>
+        </div>
+
+        <div class="vedio-item" data-video="https://www.youtube.com/watch?v=video2">
+            <img src="{% static 'Images/vedio_3.jpeg' %}" alt="Before and After">
+            <div class="vedio-overlay">
+                <button class="vedio-play-btn">▶</button>
+                <h3 class="vedio-heading">Get in wedding shape</h3>
+                <p class="vedio-text">Feli L.</p>
+            </div>
+        </div>
+
+        <div class="vedio-item" data-video="https://www.youtube.com/watch?v=video3">
+            <img src="{% static 'Images/vedio_2.jpeg' %}" alt="Before and After">
+            <div class="vedio-overlay">
+                <button class="vedio-play-btn">▶</button>
+                <h3 class="vedio-heading">Transform your life</h3>
+                <p class="vedio-text">Oswaldo T.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="vedio-cta">Become a Free Athlete →</button>
+</section>
+
 
 <script src="{% static 'js/training.js' %}"></script>
-
 {% endblock %}
 
 
