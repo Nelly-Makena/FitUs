@@ -212,3 +212,102 @@ nav {
 .journey-tallest {
     margin-top: 0px;
 }
+
+.app-scroll-section {
+    background-color: #263238;
+    color: white;
+    text-align: center;
+    padding: 100px 5%;
+    position: relative; /* Ensures elements are contained */
+    height: 290vh; /* Enough height for scrolling effect */
+}
+
+.app-section-title {
+    font-size: 40px;
+    font-weight: 550;
+    margin-bottom: 8rem;
+    letter-spacing:2px;
+    line-height: 1.2;
+    color: #F5F8FA;
+}
+
+.app-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    position: relative;
+}
+
+.app-text-content {
+    width: 35%;
+    text-align: center;
+}
+
+.app-text {
+    font-size: 1.3rem;
+    margin-bottom: 23rem;
+    line-height: 1.1;
+
+}
+
+.app-text h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+}
+
+.app-phone-wrapper {
+    position: sticky;
+    top:15vh;
+    width: 335px;
+    height: 710px;
+    z-index: 1;
+}
+
+.app-phone {
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-radius: 30px;
+    padding: 8px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 8px solid #606060; /* Thick grey border */
+}
+
+.app-phone img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.app-start-button {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 12px 18px;
+    background-color:#fff;
+    color:black;
+    font-weight: 549;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.app-start-button:hover {
+    background-color:  #cfd8dc;
+}
+
+
+/* Ensure the next section is ABOVE the phone */
+.next-section {
+    position: relative;
+    z-index: 2; /* Higher than phone */
+    background-color: white;
+    padding: 100px;
+}
