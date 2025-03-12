@@ -417,3 +417,90 @@ nav {
     background: #fff;
     color: black;
 }
+
+
+.last-section {
+    background-color:#263238;;
+    padding: 50px;
+    text-align: center;
+    color: white;
+    height: 100vh;
+}
+
+.last-title {
+    font-size: 47px;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    font-family: 'Arial', sans-serif;
+    color: #CFD8DC;
+    letter-spacing: 2.5px;
+}
+
+.last-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.last-image {
+    width: 90%; /* Bigger image */
+    height: auto;
+    object-fit: cover;
+}
+
+.last-box {
+    margin-top: 20rem;
+    position: absolute;
+    right: 0; /* Mostly on the right */
+    background-color: white;
+    color: black;
+    padding: 50px;
+    text-align: left;
+    width: 40%;
+    height: 500px; /* Slightly smaller than before */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateX(45%); /* Only 5% of it overlaps the image */
+}
+
+.last-heading {
+    font-size: 35px;
+    font-weight: 600; /* Increased font weight */
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.last-list {
+    list-style: none;
+    padding: 22px;
+    margin: 15px 0;
+}
+
+.last-item {
+    margin: 8px 0;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.last-button {
+    background-color: black;
+    color: white;
+    padding: 18px 28px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.last-button:hover {
+    background-color: #444;
+    transform: scale(1.08);
+}
