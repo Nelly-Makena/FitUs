@@ -7,7 +7,7 @@
 .nutrition-section {
     background: url("/static/Images/nutrition_1.jpeg") no-repeat center center/cover;
     width: 100%;
-    height: 100vh; /* Make the section taller */
+    height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,7 +27,7 @@
 }
 
 .nutrition-overlay h1 {
-    font-size: 4rem; /* Make heading bigger */
+    font-size: 4rem; 
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 2rem;
@@ -35,7 +35,7 @@
 }
 
 .nutrition-overlay p {
-    font-size: 1.5rem; /* Increase paragraph size */
+    font-size: 1.5rem; 
     letter-spacing: 2px;
     font-weight: 500;
     margin-bottom: 4rem;
@@ -43,8 +43,8 @@
 .nutrition-button {
     background-color: #fff;
     color: #333;
-    padding: 20px 40px; /* Increased padding for a bigger button */
-    font-size: 1.2rem; /* Larger text */
+    padding: 20px 40px; 
+    font-size: 1.2rem; 
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -52,7 +52,112 @@
 }
 
 .nutrition-button:hover {
-    background-color: #cfd8dc; /* Lighter hover color */
+    background-color: #cfd8dc; 
     color: #000;
-    transform: scale(1.02); /* Smaller hover effect */
+    transform: scale(1.02); 
 }
+
+.images-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px;
+    width: 100%;
+    max-width: 2200px;
+    margin: auto;
+    height: 1100px; 
+}
+
+.images-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.images-item h1 {
+    font-size: 48px;
+    letter-spacing: 1.8px;
+    font-weight: 550;
+    color: white;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 2;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.images-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+
+.images-overlay p,
+.images-overlay hr {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.images-overlay hr {
+    width: 150px; 
+    border: none; 
+    height: 0.4px; 
+    background-color: white; 
+    margin: 5px auto; 
+    margin-top:3rem;
+    margin-bottom:2rem;
+
+}
+
+
+.images-item:hover .images-overlay p,
+.images-item:hover .images-overlay hr {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.images-overlay p {
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 1;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+}
+
+.images-item:hover .images-overlay {
+    opacity: 1;
+}
+
+.images-item:hover .images-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Background Images */
+.images-food1 { background-image: url("/static/Images/nutrition_2.jpeg"); }
+.images-food2 { background-image: url("/static/Images/nutrition_3.webp"); }
+.images-food3 { background-image: url("/static/Images/nutrition_4.jpeg"); }
+.images-food4 { background-image: url("/static/Images/nutrition_5.jpeg"); }
