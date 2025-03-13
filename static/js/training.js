@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePhoneImage(); // first image
 });
 
-
 document.querySelectorAll(".vedio-item").forEach(item => {
     item.addEventListener("click", () => {
         const videoUrl = item.getAttribute("data-video");
