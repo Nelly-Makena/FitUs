@@ -161,3 +161,103 @@
 .images-food2 { background-image: url("/static/Images/nutrition_3.webp"); }
 .images-food3 { background-image: url("/static/Images/nutrition_4.jpeg"); }
 .images-food4 { background-image: url("/static/Images/nutrition_5.jpeg"); }
+
+
+.vid-success-stories {
+    text-align: center;
+    background-color: #263238;
+    color: white;
+    padding: 80px 20px;
+}
+.vid-title {
+    font-size: 3.0rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 550;
+}
+.vid-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-weight: 549;
+}
+.vid-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.vid-card {
+    position: relative;
+    width: 48%;
+    max-width: 700px;
+}
+.vid-thumbnail {
+    display: block;
+    position: relative;
+}
+.vid-img {
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+}
+
+/* Play Button (Moved to Bottom-Left) */
+.play-btn {
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    font-size: 1.5em;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+.play-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Overlay Text */
+.vid-overlay {
+    position: absolute;
+    bottom: 5px;
+    left: 40px; /* Adjust to avoid overlapping with play button */
+    font-size: 1.3em;
+    font-weight: 550;
+    color: white;
+    margin:0;
+}
+.vid-overlay span{
+    color:#546e7a;
+    font-size: 1em;
+    margin-top: auto;
+}
+/* Call to Action */
+.vid-cta-text {
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    font-weight: 530;
+}
+.vid-cta {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.vid-cta:hover {
+    background:#cfd8dc;
+}
