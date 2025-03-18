@@ -2,8 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif ;
 }
+body{
+    background-color: #f5f8fa;
+}
+
 .nutrition-section {
     background: url("/static/Images/nutrition_1.jpeg") no-repeat center center/cover;
     width: 100%;
@@ -263,3 +267,73 @@
 }
 
 
+
+.nut-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 40px;
+    height: 80vh;
+}
+.nut-text-content {
+    max-width: 700px;
+}
+.nut-text-content h1 {
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #161E21;
+    font-family:'Aktiv Grotesk', sans-serif !important;
+
+}
+.nut-text-content h3 {
+    font-size: 25px;
+    font-weight: 550;
+    letter-spacing: 1.3px;
+    margin-bottom: 2rem;
+    color: #161E21;
+    font-family:'Aktiv Grotesk', sans-serif !important;
+}
+.nut-text-content p {
+    font-size: 21px;
+    color: #161E21;
+    letter-spacing: 1.1px;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+    font-family:'Aktiv Grotesk', sans-serif !important;
+
+
+}
+.nut-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+.nut-buttons img {
+    width: 180px;
+}
+.nut-cta {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 15px 21px;
+    background-color: #37474f;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 549;
+    font-size: 25px;
+}
+.nut-cta:hover{
+    background-color: #f5f8fa;
+    color:#37474f;
+}
+.nut-image-content img {
+    width: 630px;
+    height: 770px;
+}
