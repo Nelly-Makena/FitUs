@@ -277,7 +277,7 @@ body{
     max-width: 1400px;
     margin: 0 auto;
     gap: 40px;
-    height: 80vh;
+    height: 100vh;
 }
 .nut-text-content {
     max-width: 700px;
@@ -336,4 +336,50 @@ body{
 .nut-image-content img {
     width: 630px;
     height: 770px;
+}
+
+
+.eat-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('/static/Images/video.jpeg') no-repeat center center/cover;
+}
+.eat-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f5f8fa;
+    text-align: center;
+}
+.eat-play {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 3rem;
+    filter: brightness(0.9);
+}
+.eat-title {
+    font-size: 3.9rem;
+    font-weight: 600;
+    letter-spacing:1.3px;
+    margin-bottom: 3rem;
+}
+.eat-button {
+    padding: 15px 22px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: 0.3s;
+    letter-spacing:1.3px;
+    font-weight: 549;
+}
+.eat-button:hover {
+    background: #ddd;
 }
