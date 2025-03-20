@@ -2,10 +2,25 @@
 {% load static %}
 
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/help.css' %}">
+
 
 {% block body %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/help.css' %}">
+
+
+
+<section class="sea-container">
+    <h1 class="sea-title">Help Center</h1>
+    <p class="sea-subtitle">What we may help you with?</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+        <div class="sea-search-box">
+             <img src="{% static 'Images/search.png' %}" alt="search">
+            <input type="text" placeholder="How to track an email?">
+        </div>
+        <button class="sea-search-btn">Search</button>
+    </div>
+</section>
 
 
 
@@ -21,12 +36,9 @@
 
 
 
+<script src="nutrition.js"></script>
 
-
-<script src="help.js"></script>
 
 {% endblock %}
 
-
-{% block footer %}
-{% endblock %}
+{% block footer %}{% endblock %}
