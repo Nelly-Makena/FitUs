@@ -11,3 +11,7 @@ def training_view(request):
 def nutrition_view(request):
     context = {}
     return render(request, 'nutrition.html', context)
+
+def help_view(request):
+    context = {}
+    return render(request, 'help.html', context)

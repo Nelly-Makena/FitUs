@@ -2,46 +2,384 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif ;
+}
+body{
+    background-color: #f5f8fa;
 }
 
 .nutrition-section {
-    background: url('Images/nutrition_1.jpeg') no-repeat center center/cover;
-    height: 100vh;
+    background: url("/static/Images/nutrition_1.jpeg") no-repeat center center/cover;
+    width: 100%;
+    height: 100vh; 
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     position: relative;
 }
 
 .nutrition-overlay {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: white;
+    margin-top: 20rem;
 }
 
-.nutrition-heading {
-    font-size: 2.5rem;
-    font-weight: bold;
+.nutrition-overlay h1 {
+    font-size: 4rem; 
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    line-height: 1.2;
 }
 
-.nutrition-subtext {
-    font-size: 1.2rem;
-    margin: 10px 0;
+.nutrition-overlay p {
+    font-size: 1.5rem; 
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 4rem;
 }
-
 .nutrition-button {
-    background: white;
-    color: black;
-    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 20px 40px; 
+    font-size: 1.2rem; 
+    font-weight: bold;
     border: none;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .nutrition-button:hover {
-    background: lightgray;
+    background-color: #cfd8dc; 
+    color: #000;
+    transform: scale(1.02); 
+}
+
+.images-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px;
+    width: 100%;
+    max-width: 2200px;
+    margin: auto;
+    height: 1100px; 
+}
+
+.images-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.images-item h1 {
+    font-size: 48px;
+    letter-spacing: 1.8px;
+    font-weight: 550;
+    color: white;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 2;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.images-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+
+.images-overlay p,
+.images-overlay hr {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.images-overlay hr {
+    width: 150px; 
+    border: none; 
+    height: 0.4px; 
+    background-color: white; 
+    margin: 5px auto; 
+    margin-top:3rem;
+    margin-bottom:2rem;
+
+}
+
+
+.images-item:hover .images-overlay p,
+.images-item:hover .images-overlay hr {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.images-overlay p {
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 1;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+}
+
+.images-item:hover .images-overlay {
+    opacity: 1;
+}
+
+.images-item:hover .images-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Background Images */
+.images-food1 { background-image: url("/static/Images/nutrition_2.jpeg"); }
+.images-food2 { background-image: url("/static/Images/nutrition_3.webp"); }
+.images-food3 { background-image: url("/static/Images/nutrition_4.jpeg"); }
+.images-food4 { background-image: url("/static/Images/nutrition_5.jpeg"); }
+
+
+.vid-success-stories {
+    text-align: center;
+    background-color: #263238;
+    color: white;
+    padding: 80px 20px;
+}
+.vid-title {
+    font-size: 3.0rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 550;
+}
+.vid-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-weight: 549;
+}
+.vid-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.vid-card {
+    position: relative;
+    width: 48%;
+    max-width: 700px;
+}
+.vid-thumbnail {
+    display: block;
+    position: relative;
+}
+.vid-img {
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+}
+
+/* Play Button (Moved to Bottom-Left) */
+.play-btn {
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    font-size: 1.5em;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+.play-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Overlay Text */
+.vid-overlay {
+    position: absolute;
+    bottom: 5px;
+    left: 40px; /* Adjust to avoid overlapping with play button */
+    font-size: 1.3em;
+    font-weight: 550;
+    color: white;
+    margin:0;
+}
+.vid-overlay span{
+    color:#546e7a;
+    font-size: 1em;
+    margin-top: auto;
+}
+/* Call to Action */
+.vid-cta-text {
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    font-weight: 530;
+}
+.vid-cta {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.vid-cta:hover {
+    background:#cfd8dc;
+}
+
+
+
+.nut-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 40px;
+    height: 100vh;
+}
+.nut-text-content {
+    max-width: 700px;
+}
+.nut-text-content h1 {
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #161E21;
+    font-family:'Aktiv Grotesk', sans-serif !important;
+
+}
+.nut-text-content h3 {
+    font-size: 25px;
+    font-weight: 550;
+    letter-spacing: 1.3px;
+    margin-bottom: 2rem;
+    color: #161E21;
+    font-family:'Aktiv Grotesk', sans-serif !important;
+}
+.nut-text-content p {
+    font-size: 21px;
+    color: #161E21;
+    letter-spacing: 1.1px;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+    font-family:'Aktiv Grotesk', sans-serif !important;
+
+
+}
+.nut-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+.nut-buttons img {
+    width: 180px;
+}
+.nut-cta {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 15px 21px;
+    background-color: #37474f;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 549;
+    font-size: 25px;
+}
+.nut-cta:hover{
+    background-color: #f5f8fa;
+    color:#37474f;
+}
+.nut-image-content img {
+    width: 630px;
+    height: 770px;
+}
+
+
+.eat-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('/static/Images/video.jpeg') no-repeat center center/cover;
+}
+.eat-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f5f8fa;
+    text-align: center;
+}
+.eat-play {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 3rem;
+    filter: brightness(0.9);
+}
+.eat-title {
+    font-size: 3.9rem;
+    font-weight: 600;
+    letter-spacing:1.3px;
+    margin-bottom: 3rem;
+}
+.eat-button {
+    padding: 15px 22px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: 0.3s;
+    letter-spacing:1.3px;
+    font-weight: 549;
+}
+.eat-button:hover {
+    background: #ddd;
 }
