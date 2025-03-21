@@ -1,18 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
     background-color: #f5f8fa;
 }
+
+nav {
+    position: relative !important;
+    z-index: 1000;
+}
+
 .sea-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     background-color: #cfd8dc;
     width: 100%;
-    margin-top: 7rem;
-    height: 25vh;
+    height: 35vh;
+    padding-top: 50px;
+    margin-top: 50px;
 }
+
 .sea-title {
     font-size: 42px;
     margin-bottom: 25px;
@@ -20,8 +27,8 @@ body {
     color: #161E21;
     font-weight: bold;
     letter-spacing: -0.01em;
-
 }
+
 .sea-subtitle {
     font-size: 20px;
     color: #161E21;
@@ -29,6 +36,7 @@ body {
     font-weight: 500;
     letter-spacing: 1px;
 }
+
 .sea-search-box {
     position: relative;
     display: flex;
@@ -38,6 +46,7 @@ body {
     padding: 10px 300px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .sea-search-box input {
     border: none;
     outline: none;
@@ -46,18 +55,17 @@ body {
     font-size: 19px;
     font-weight: 500;
     letter-spacing: 1px;
-   
 }
 
 .sea-search-box img {
-    width: 30px;  
-    margin-right: 8px; 
+    width: 30px;
+    margin-right: 8px;
     position: absolute;
     left: 10px;
 }
 
 .sea-search-btn {
-    background:  #161E21;
+    background: #161E21;
     color: white;
     border: none;
     padding: 5px 40px;
@@ -66,7 +74,73 @@ body {
     font-size: 19px;
     font-weight: 500;
     letter-spacing: 1px;
+}
+
+.sea-search-btn:hover {
+    background: #333;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 50px auto 0;
+    max-width: 59%;
+}
+
+.card-item {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.19);
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width:550px ;
+    height: 180px;
+}
+.card-item:hover {
+    transform: scale(1.0);
+    box-shadow: 0 0 0 3px white, 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid white;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.05);
+    color: rgb(100, 100, 100);
+    align-self: flex-start; 
+    margin-top: 4rem;
+    margin-right: 1.2rem;
+    margin-left: 1rem;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 550;
+    color: #020407;
+    margin-bottom: 0.5rem;
 
 }
-.sea-search-btn:hover {
-    background: #333;}
+
+.card-desc {
+    font-size: 17px;
+    color: #878c91;
+    letter-spacing: 1px;
+    font-weight: 500;
+    line-height: 1;
+}
