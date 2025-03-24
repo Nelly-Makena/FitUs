@@ -11,3 +11,7 @@ function toggleFAQ(button) {
         icon.textContent = '-';
     }
 }
+
+document.querySelector("form").addEventListener("submit", function (e) {
+    alert("Message sent successfully!");
+});
