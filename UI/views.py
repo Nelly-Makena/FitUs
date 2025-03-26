@@ -15,3 +15,7 @@ def nutrition_view(request):
 def help_view(request):
     context = {}
     return render(request, 'help.html', context)
+
+def shop_view(request):
+    context = {}
+    return render(request, 'shop.html', context)

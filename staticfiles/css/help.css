@@ -43,7 +43,7 @@ nav {
     align-items: center;
     background: #fff;
     border-radius: 10px;
-    padding: 10px 300px;
+    padding: 5px 300px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -68,7 +68,7 @@ nav {
     background: #161E21;
     color: white;
     border: none;
-    padding: 5px 40px;
+    padding: 10px 40px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 19px;
