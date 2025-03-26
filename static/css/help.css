@@ -43,7 +43,7 @@ nav {
     align-items: center;
     background: #fff;
     border-radius: 10px;
-    padding: 10px 300px;
+    padding: 5px 300px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -68,7 +68,7 @@ nav {
     background: #161E21;
     color: white;
     border: none;
-    padding: 5px 40px;
+    padding: 10px 40px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 19px;
@@ -150,6 +150,7 @@ nav {
     margin: 40px auto;
     font-family: 'Roboto', sans-serif;
     color: #333;
+    margin-top: 5rem;
 }
 
 .faq-title {
@@ -173,7 +174,7 @@ nav {
     text-align: left;
     border: none;
     padding: 15px 20px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
@@ -197,6 +198,107 @@ nav {
     background: #ffffff;
     padding: 15px 20px;
     border-top: 1px solid #ddd;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #666;
+}
+
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f8f9fa;
+}
+
+.form-container {
+    width: 50%;
+    height: 90vh;
+}
+
+.form-container h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 7rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.form-container p {
+    font-size: 25px;
+    color: #555;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 19px;
+    margin-top: 23px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input{
+    height: 50px;
+}
+textarea {
+    height: 150px;
+}
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terms input {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.terms label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+button {
+    background-color: #666;
+    color: white;
+    border: none;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+.image-container {
+    width: 35%;
+    margin-top: 7rem;
+    margin-right: 5rem;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 5px;
 }
