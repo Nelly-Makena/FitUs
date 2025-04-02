@@ -86,7 +86,6 @@ nav {
     color: white;
     cursor: pointer;
 }
-
 @media(max-width: 768px) {
     /* Logo: Align it to the left on smaller screens */
     .logo {
@@ -98,7 +97,7 @@ nav {
     .nav-links {
         position: absolute;
         top: 100%;
-        right: -100%;
+        right: -100%; /* Keep it hidden initially */
         width: 270px;
         height: 100vh;
         display: flex;
@@ -107,27 +106,28 @@ nav {
         padding: 20px 15px;
         gap: 0.5rem;
         text-align: left;
-        transition: all .50s ease;
+        transition: right 0.5s ease; /* Animate right position */
     }
 
     /* Show menu icon on small screens */
     #menu-icon {
         display: block;
-        margin-left:20px;
-
+        cursor: pointer;
+        margin-left: 20px;
     }
 
+    /* Show nav links when menu is open */
     .nav-links.open {
-        display: flex; /* Show links when menu is open */
+        right: 0; /* Move into view */
     }
 
     /* Optional: style individual nav links for mobile */
     .nav-links li a {
-        color: black;
+        color: black; /* Change from black to white for visibility */
         font-size: 20px;
         padding: 15px;
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
     /* Hide 'Start now' on mobile screens */
