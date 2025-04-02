@@ -13,7 +13,7 @@ nav {
     height: 80px;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Pushes items slightly left */
+    justify-content: space-between; /* Adjusted for better layout */
     padding: 0 1.5rem;
     position: fixed !important;
     z-index: 1000;
@@ -34,13 +34,6 @@ nav {
     margin-right: 1.5rem;
 }
 
-/* Navigation Container */
-.nav-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-}
 
 /* Navigation Links */
 .nav-links {
@@ -51,7 +44,6 @@ nav {
     justify-content: center;
 }
 
-/* Ensure all links are displayed properly */
 .nav-links li {
     display: inline-block;
 }
@@ -85,17 +77,64 @@ nav {
     border-radius: 5px;
     font-weight: bold;
     text-decoration: none;
-    margin-right: 6rem;
 }
 
-/* Hamburger Menu */
-.hamburger {
-    display: none;
+/* Hamburger Menu Icon */
+#menu-icon {
+    display: none; /* Initially hidden */
     font-size: 30px;
     color: white;
     cursor: pointer;
 }
 
+@media(max-width: 768px) {
+    /* Logo: Align it to the left on smaller screens */
+    .logo {
+        margin-left: 0; /* Align logo to the left */
+        margin-right: 0;
+    }
+
+    /* Nav links */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: #101821;
+        padding: 20px 15px;
+        gap: 0.5rem;
+        text-align: left;
+        transition: all .50s ease;
+    }
+
+    /* Show menu icon on small screens */
+    #menu-icon {
+        display: block;
+        margin-left:20px;
+
+    }
+
+    .nav-links.open {
+        display: flex; /* Show links when menu is open */
+    }
+
+    /* Optional: style individual nav links for mobile */
+    .nav-links li a {
+        color: black;
+        font-size: 20px;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hide 'Start now' on mobile screens */
+    .start-now {
+        display: none;
+    }
+}
 /* Home styling */
 .video-container {
     position: relative;

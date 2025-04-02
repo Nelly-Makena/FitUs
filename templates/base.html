@@ -14,57 +14,52 @@
 
     <!--  CSS -->
 
+     <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
 </head>
 
  {% block 'header' %}
- <nav>
-        <div class="logo">
-             <a href="{% url 'UI:home' %}
-">
+<nav class="navbar">
+    <div class="logo">
+        <a href="{% url 'UI:home' %}">
             <img src="{% static 'Images/logo.png' %}" alt="Logo">
-             </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="{% url 'UI:training' %}">Training</a></li>
-            <li><a href="{% url 'UI:nutrition' %}">Nutrition</a></li>
-            <li><a href="{% url 'UI:shop' %}">Shop</a></li>
-            <li><a href="{% url 'UI:help' %}">Help center</a></li>
-        </ul>
-        <div class="nav-right">
-            <span class="hide-on-mobile">EN</span>
-            <a href="#" class="login">Log In</a>
-            <a href="#" class="start-now hide-on-mobile">Start now →</a>
-        </div>
-        <div class="hamburger">☰</div>
-    </nav>
-
-   <script>
-    // Responsive navbar toggle
-    document.querySelector(".hamburger").addEventListener("click", function() {
-        document.querySelector(".nav-links").classList.toggle("active");
-        document.querySelector(".nav-right").classList.toggle("active");
-    });
-</script>
-
-    {% endblock %}
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{% url 'UI:training' %}">Training</a></li>
+        <li><a href="{% url 'UI:nutrition' %}">Nutrition</a></li>
+        <li><a href="{% url 'UI:shop' %}">Shop</a></li>
+        <li><a href="{% url 'UI:help' %}">Help center</a></li>
+    </ul>
+    <div class="nav-right">
+        <span class="hide-on-mobile">EN</span>
+        <a href="#" class="login">Log In</a>
+        <a href="#" class="start-now hide-on-mobile">Start now →</a>
+    </div>
+    <div class="bx bx-menu" id="menu-icon"></div>
+</nav>
 
 
-    <!-- Add this block to include the body content from child templates -->
-    {% block body %}
-    {% endblock %}
 
-    <!-- Footer block, can be overridden in child templates -->
- {% block footer %}
+
+{% endblock %}
+
+{% block body %}
+    <!-- Main Content Goes Here -->
+{% endblock %}
+
+{% block footer %}
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-logo">
             <img src="{% static 'Images/logo.png' %}" alt="Freeletics Logo">
             <p>&copy; 2025 Freeletics GmbH</p>
             <div class="footer-buttons">
-            <img src="{% static 'Images/app_store.svg' %}" alt="App Store">
-            <img src="{% static 'Images/play_store.svg' %}" alt="Google Play">
-        </div>
+                <img src="{% static 'Images/app_store.svg' %}" alt="App Store">
+                <img src="{% static 'Images/play_store.svg' %}" alt="Google Play">
+            </div>
         </div>
         <div class="footer-links">
             <div class="footer-column">
@@ -96,9 +91,9 @@
                 <a href="#">TikTok</a>
             </div>
         </div>
-
     </div>
 </footer>
- {% endblock %}
-</body>
-</html>
+{% endblock %}
+
+<!-- JavaScript -->
+<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
