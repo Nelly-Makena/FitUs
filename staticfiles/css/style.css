@@ -134,6 +134,31 @@ nav {
     .start-now {
         display: none;
     }
+    .hero-section h1 {
+        font-size: 2rem!important;
+        font-weight: 500!important;
+        width: 400px;
+        margin-bottom: 2.5rem;
+    }
+    .hero-section p {
+    
+    letter-spacing: 1.5px;
+    line-height:1.5;
+    margin-right: 10px;
+    font-size: 0.6rem; /* Increased font size */
+    font-weight: 100!important ;
+    margin-bottom: 1.5rem;
+    }
+    .cta-button {
+        
+        font-size: 0.9rem!important;
+        font-weight: 500!important;
+        padding: 13px 20px!important;
+        margin-top: 20px;
+        border-radius: 0px!important;
+        letter-spacing: 1px;
+        
+    }
 }
 /* Home styling */
 .video-container {
@@ -414,6 +439,29 @@ nav {
     margin-right: 15rem;
 
 }
+
+@media only screen and (max-width: 768px) {
+    .text-container h2 {
+        font-size: 25px;
+        width: 50%;
+        margin-left: 1.5rem;
+        letter-spacing: 0.3px;
+        font-weight: 500;
+        line-height: 1.5;
+
+    }
+    .text-container h2 span {
+        font-size: 25px;
+        letter-spacing: 0.3px;
+        font-weight: 500;
+        width: 50%;
+        line-height: 1.5;
+
+    }
+    
+    
+}
+
 .transformation-section {
     padding: 40px 20px;
     font-family: Arial, sans-serif;
