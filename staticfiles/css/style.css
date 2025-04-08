@@ -251,10 +251,12 @@ nav {
     margin-top: -120px; 
     z-index: 5; 
     max-height: 600px;
+    position: relative;
 }
 
 .phone-container img {
-    width: 300px; /* Slightly increased size */
+    width: 100%;
+    max-width: 300px; /* Slightly increased size */
     border-radius: 40px; /* More curved for a phone shape */
     border: 10px solid black; /* More visible border */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Deeper shadow */
@@ -265,6 +267,7 @@ nav {
 .text-container {
     max-width:1000px;
     margin-left: 50px;
+    
 }
 
 .text-container h2 {
@@ -441,23 +444,65 @@ nav {
 }
 
 @media only screen and (max-width: 768px) {
+    .text-container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
     .text-container h2 {
-        font-size: 25px;
-        width: 50%;
-        margin-left: 1.5rem;
-        letter-spacing: 0.3px;
-        font-weight: 500;
-        line-height: 1.5;
-
+        color: #ff7f32;
+        line-height: 1.4;
+        font-weight: bold;
+        letter-spacing: 0.3px; 
+        margin-top: 2rem;
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 23px;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
     }
+    
     .text-container h2 span {
-        font-size: 25px;
-        letter-spacing: 0.3px;
-        font-weight: 500;
-        width: 50%;
-        line-height: 1.5;
-
+        font-size: 23px;
+        color: #ff7f32;
+        line-height: 1.4;
+        font-weight: bold;
+        letter-spacing: 0.3px; 
     }
+    .fitness-section {
+        display: flex;
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+        justify-content: center;
+        padding: 20px 10px;
+        background-color: #263238;
+        position: relative;
+        overflow: visible;
+        text-align: center; /* Optional: if there's text */
+    }
+    
+    .phone-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-top: -80px; /* Less aggressive */
+        max-height: 500px;
+        width: 100%;
+    }
+    
+    .phone-container img {
+        width: 100%;
+        max-width: 200px;
+        border-radius: 40px;
+        border: 10px solid black;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    
+    
+
     
     
 }
