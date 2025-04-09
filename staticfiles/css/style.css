@@ -500,11 +500,114 @@ nav {
         border: 10px solid black;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
+    .stats {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
     
+      .vertical-line {
+        border-left: none;
+        border-top: 0.1px solid rgba(120, 144, 156, 0.2); 
+        width: 200px;
+        height: 0;
+        margin: 10px 0;
+      }
+      
+    .stats h3 {
+        font-size: 19px;
+        font-weight: 550;
+        letter-spacing:0.3px;
+        margin-bottom: 20px!important;
+    }
+    .stats p {
+        font-size: 13px;
+        color:#78909c;
+        line-height: 0.9;
+        letter-spacing: 0.1px;
+        font-weight: 550;
     
-
+    }
+    .reviews-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        text-align: center;
+      }
     
+   
     
+    .review img {
+        width: 50px;
+        height: 70px;
+      }
+    
+    .stars {
+        font-size: 20px;
+      }
+    
+    .review p {
+        font-size: 16px;
+      }
+    
+    .review p span {
+        font-size: 18px;
+      }
+    
+      #testimonial-section {
+        overflow: hidden;
+        position: relative;
+        padding: 20px;
+      }
+    
+      #testimonial-1, #testimonial-2 {
+        display: inline-block;
+        width: 70vw;
+        max-width: 280px;
+        padding: 20px;
+        margin: 0;
+      }
+      
+      #testimonial-2 {
+        position: absolute;
+        top: 20px;
+        left: 78vw; /* adjusted to avoid too much overlap */
+        opacity: 0.6;
+        z-index: 0;
+        pointer-events: none;
+      }
+      
+    
+      #prev-btn,
+      #next-btn {
+        display: none;
+      }
+      
+      #testimonial-title-1, #testimonial-title-2 {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    
+    }
+    
+    /* More specific paragraph styles */
+    #testimonial-text-1, #testimonial-text-2 {
+        font-size: 12px;
+        line-height: 1.8;
+       
+       
+    }
+    #profile-1, #profile-2 span{
+   
+        letter-spacing: 1.5px;
+        font-weight: 500;
+        font-size: 13px;
+        
+    }
+     #profile-2 img {
+       margin-top: 1rem;
+    }
 }
 
 .transformation-section {
@@ -604,6 +707,29 @@ nav {
     background-color: #d3d3d3;
 }
 
+@media (max-width: 768px) {
+    .text-content h1 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+  
+    .text-content p {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      line-height: 1.4;
+    }
+
+    .join-button {
+    font-size: 1.0rem;
+    padding: 14px 30px;
+    border-radius: 1px;
+    font-weight: 500;
+}
+
+
+}
+
 .training-app-section {
     display: flex;
     align-items: center;
@@ -692,6 +818,34 @@ nav {
     width: 0%;
     z-index: 10;
 }
+@media screen and (max-width: 768px) {
+    .training-image-container {
+        display: none;
+    }
+
+    .training-content {
+        max-width: 100%;
+        margin-left: 0; 
+    }
+
+    .training-title {
+        font-size: 35px; 
+        margin-bottom: 2rem;
+        margin-top: 2rem!important;
+        letter-spacing: 0.5px;
+    }
+
+    .training-description {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+    }
+
+}
+
+
 .footer {
     background-color: #263238;
     color: white;
