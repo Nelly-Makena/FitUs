@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif !important; /* Ensures font style */
+    font-family: Arial, sans-serif !important;
 
 }
 
@@ -13,7 +13,7 @@ nav {
     height: 80px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Adjusted for better layout */
+    justify-content: space-between;
     padding: 0 1.5rem;
     position: fixed !important;
     z-index: 1000;
@@ -30,7 +30,7 @@ nav {
 }
 
 .logo img {
-    height: 55px;
+    height: 65px;
     margin-right: 1.5rem;
 }
 
@@ -87,7 +87,9 @@ nav {
     cursor: pointer;
 }
 @media(max-width: 768px) {
-    /* Logo: Align it to the left on smaller screens */
+    nav{
+        height: 60px;
+    }
     .logo {
         margin-left: 0; /* Align logo to the left */
         margin-right: 0;
@@ -105,7 +107,6 @@ nav {
         background: #101821;
         padding: 20px 15px;
         gap: 0.5rem;
-        text-align: left;
         transition: right 0.5s ease; /* Animate right position */
     }
 
@@ -113,7 +114,7 @@ nav {
     #menu-icon {
         display: block;
         cursor: pointer;
-        margin-left: 20px;
+        margin-left: 0px;
     }
 
     /* Show nav links when menu is open */
@@ -158,6 +159,9 @@ nav {
         border-radius: 0px!important;
         letter-spacing: 1px;
         
+    }
+    .hide-on-mobile{
+        display: none;
     }
 }
 /* Home styling */
@@ -563,7 +567,7 @@ nav {
     
       #testimonial-1, #testimonial-2 {
         display: inline-block;
-        width: 70vw;
+        width: 60vw;
         max-width: 280px;
         padding: 20px;
         margin: 0;
@@ -572,7 +576,7 @@ nav {
       #testimonial-2 {
         position: absolute;
         top: 20px;
-        left: 78vw; /* adjusted to avoid too much overlap */
+        left: 80vw; /* adjusted to avoid too much overlap */
         opacity: 0.6;
         z-index: 0;
         pointer-events: none;
@@ -888,7 +892,7 @@ nav {
 }
 
 .footer-logo img {
-    width: 80px; /* Reduced logo size */
+    width: 90px; /* Reduced logo size */
     margin-bottom: 10px;
 }
 
@@ -944,3 +948,39 @@ nav {
     width: 140px;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-logo {
+        order: 1;
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 30px;
+
+    }
+    .footer-logo img {
+        width: 70px; /* Reduced logo size */
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        order: 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 50px;
+        margin: 30px 0;
+        justify-items: flex-start;
+        width: 100%;
+    }
+
+    .footer-buttons {
+        order: 3; /* Make this appear last */
+        align-self: flex-start;
+        margin-top: 20px;
+    }
+}
+
