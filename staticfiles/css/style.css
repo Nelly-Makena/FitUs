@@ -839,8 +839,28 @@ nav {
         font-size: 16px;
         line-height: 1.6;
         margin-bottom: 2rem;
-        font-weight: 400;
+        font-weight: 500;
         letter-spacing: 0.4px;
+    }
+    .training-feature {
+        gap: 20px; /* Keeps icons closer to text */
+        max-width: 630px;
+    }
+    
+    .feature-icon {
+        filter: invert(1); /* Turns black SVGs into white */
+        width: 35px; /* Adjust as needed */
+        height: 35px;
+    }
+    
+    .feature-title{
+        font-size: 20px;
+        margin-bottom: 0.5rem;
+    }
+    .feature-text {
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: 1.1px;
     }
 
 }
