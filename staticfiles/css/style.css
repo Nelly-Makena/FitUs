@@ -7,8 +7,9 @@
 
 }
 
+
 /* Navbar Styles */
-nav {
+.navbar {
     background-color: #263238;
     height: 80px;
     display: flex;
@@ -20,6 +21,7 @@ nav {
     width: 100%;
     margin-top: 0 !important;
 }
+
 
 /* Logo */
 .logo {
@@ -80,90 +82,123 @@ nav {
 }
 
 /* Hamburger Menu Icon */
-#menu-icon {
-    display: none; /* Initially hidden */
-    font-size: 30px;
-    color: white;
+.hamburger {
+    display: none;
+    font-size: 28px;
     cursor: pointer;
 }
 @media(max-width: 768px) {
-    nav{
+    .navbar {
         height: 60px;
+        flex-wrap: wrap;
+        position: relative;
+        padding-right: 80px; /* space for hamburger */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
+
     .logo {
-        margin-left: 0; /* Align logo to the left */
+        margin-left: 0;
         margin-right: 0;
     }
 
-    /* Nav links */
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        right: -100%; /* Keep it hidden initially */
-        width: 270px;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: #101821;
-        padding: 20px 15px;
-        gap: 0.5rem;
-        transition: right 0.5s ease; /* Animate right position */
-    }
-
-    /* Show menu icon on small screens */
-    #menu-icon {
-        display: block;
-        cursor: pointer;
-        margin-left: 0px;
-    }
-
-    /* Show nav links when menu is open */
-    .nav-links.open {
-        right: 0; /* Move into view */
-    }
-
-    /* Optional: style individual nav links for mobile */
-    .nav-links li a {
-        color: black; /* Change from black to white for visibility */
-        font-size: 20px;
-        padding: 15px;
-        width: 100%;
-        text-align: left;
-    }
-
-    /* Hide 'Start now' on mobile screens */
-    .start-now {
-        display: none;
-    }
     .hero-section h1 {
-        font-size: 2rem!important;
-        font-weight: 500!important;
+        font-size: 2rem !important;
+        font-weight: 500 !important;
         width: 400px;
         margin-bottom: 2.5rem;
     }
-    .hero-section p {
+
     
-    letter-spacing: 1.5px;
-    line-height:1.5;
-    margin-right: 10px;
-    font-size: 0.6rem; /* Increased font size */
-    font-weight: 100!important ;
-    margin-bottom: 1.5rem;
+    .hero-section p {
+        letter-spacing: 1.5px;
+        line-height: 1.5;
+        margin-right: 10px;
+        font-size: 0.6rem;
+        font-weight: 100 !important;
+        margin-bottom: 1.5rem;
     }
+
     .cta-button {
-        
-        font-size: 0.9rem!important;
-        font-weight: 500!important;
-        padding: 13px 20px!important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        padding: 13px 20px !important;
         margin-top: 20px;
-        border-radius: 0px!important;
+        border-radius: 0px !important;
         letter-spacing: 1px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 75%;
+        background: #263238;
+        padding: 80px 20px;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin-bottom: 20px;
+    }
+
+    .nav-links li a {
+        color: white !important;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .hamburger {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        z-index: 1100;
+        font-size: 28px;
+        color: white;
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+
+    .nav-right {
+        .nav-right {
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* This aligns Log In with hamburger vertically */
+            gap: 15px;
+            position: absolute;
+            top: 16px;
+            right: 60px; /* keeps it left of hamburger */
+            z-index: 1100;
+        }
         
     }
-    .hide-on-mobile{
+
+    .nav-right .login {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .hide-on-mobile {
         display: none;
     }
 }
+
 /* Home styling */
 .video-container {
     position: relative;
@@ -245,6 +280,7 @@ nav {
     background-color: #263238;
     position: relative;
     overflow: visible;
+    overflow-x: hidden;
 
 
 }
@@ -385,6 +421,7 @@ nav {
     padding: 50px;
     color: #fff;
     background-color: #263238;
+    overflow-x: hidden;
 
 }
 
@@ -620,6 +657,7 @@ nav {
     text-align: center;
     color: #fff;
     background-color: #263238;
+    overflow-x: hidden;
 }
 
 .text-content {
@@ -742,6 +780,7 @@ nav {
     color: white;
     padding: 100px 8%;
     text-align: left;
+    overflow-x: hidden;
 }
 
 .training-content {
@@ -875,6 +914,7 @@ nav {
     color: white;
     padding: 50px 8%;
     text-align: left;
+    overflow-x: hidden;
 }
 
 .footer-container {
