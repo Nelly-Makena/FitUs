@@ -6,6 +6,11 @@
     font-family: Arial, sans-serif !important;
 
 }
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 
 
 /* Navbar Styles */
