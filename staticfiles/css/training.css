@@ -327,28 +327,29 @@ nav {
         font-weight: 600;
         border-radius: 0px;
     }
-
     .journey-image-grid {
-        flex-direction: column; /* Stack images vertically */
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-    }
-
-    .journey-column {
-        width: 100%; /* Full width columns */
-        gap: 20px;
-    }
-
-    .journey-grid-item img {
-        width: 100%; /* Make images responsive */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .journey-tall,
-    .journey-short,
-    .journey-tallest {
-        margin-top: 20px; /* Adjust margin for stacked items */
-    }
+        gap: 40px;
+      }
+    
+      .journey-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+    
+      .journey-grid-item img {
+        width: 160px;
+        height: 220px;
+      }
+    
+      .journey-tall,
+      .journey-short,
+      .journey-tallest {
+        margin-top: 0;
+      }
 }
 
 @media (max-width: 480px) {
@@ -454,6 +455,7 @@ nav {
 .app-start-button:hover {
     background-color:  #cfd8dc;
 }
+
 
 .vedio-gallery-section {
     width: 100%;
