@@ -67,9 +67,51 @@ nav {
 .training-cta-button:hover {
     background-color:#cfd8dc; /* Light gray hover effect */
 }
-.training-image-container{
+.trainings-image-container{
     margin-right: 7rem;
     margin-top: 8.35rem;
+}
+@media (max-width: 768px) {
+    .workout {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .training-content {
+        margin-left: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .training-content h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .training-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .trainings-image-container {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 4.52rem;
+    }
+
+    .trainings-image-container img {
+        max-width: 90%;
+        height: auto;
+    }
+    .training-cta-button {
+        padding: 12px 100px; 
+       
+    }
+    
 }
 
 .freeletics-section {
@@ -123,7 +165,7 @@ nav {
 }
 
 .icon {
-    width: 32px; /* Adjust size as needed */
+    width: 32px; 
     height: auto;
     margin-bottom: 20px;
     filter: invert(30%) sepia(80%) saturate(250%) hue-rotate(200deg);
@@ -131,6 +173,49 @@ nav {
     
 
 }
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+    .section-title {
+        font-size: 2.0rem;
+        color: #161e21;
+        font-weight: 600;
+        margin-bottom: 5rem;
+        line-height: 0.9;
+        letter-spacing: 0.4px;
+    }
+
+    .benefit-card {
+        width: 100%;
+        color: #37474F;
+        font-size: 16px;
+        font-weight: 530;
+        letter-spacing: 0.03;
+        line-height: 1.2;
+        height: 8rem;
+        padding: 20px;
+        text-align: left;
+        border-bottom: 1px solid #cfd8dc; 
+        box-shadow: none;
+    }
+
+    .benefit-card:last-child {
+        border-bottom: none; 
+    }
+
+    .icon {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+        filter: invert(30%) sepia(70%) saturate(200%) hue-rotate(200deg); /* Reduce filter strength */
+        opacity: 0.8; 
+    }
+}
+
 
 .journey-section {
     display: flex;
@@ -211,6 +296,74 @@ nav {
 
 .journey-tallest {
     margin-top: 0px;
+}
+@media (max-width: 768px) {
+    .journey-section {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .journey-content {
+        width: 100%; 
+        text-align: center; 
+    }
+
+    .journey-title {
+        font-size: 34px; 
+        text-align: center;
+    }
+    
+    .journey-text {
+        font-size: 18px; /* Adjust font size */
+        text-align: center;
+    }
+
+    .journey-btn {
+        padding: 10px 100px;
+        background: white;
+        color: black;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 0px;
+    }
+    .journey-image-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+    
+      .journey-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+    
+      .journey-grid-item img {
+        width: 160px;
+        height: 220px;
+      }
+    
+      .journey-tall,
+      .journey-short,
+      .journey-tallest {
+        margin-top: 0;
+      }
+}
+
+@media (max-width: 480px) {
+    .journey-title {
+        font-size: 28px; /* Slightly smaller font size for very small screens */
+    }
+
+    .journey-text {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .journey-btn {
+        padding: 10px 25px; /* Adjust button padding for very small screens */
+    }
 }
 
 .app-scroll-section {
@@ -302,6 +455,7 @@ nav {
 .app-start-button:hover {
     background-color:  #cfd8dc;
 }
+
 
 .vedio-gallery-section {
     width: 100%;
