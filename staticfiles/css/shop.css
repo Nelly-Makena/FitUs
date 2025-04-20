@@ -126,3 +126,42 @@ body {
     background: #6b6e72;
     transition: 0.3s ease-in-out;
 }
+
+
+
+@media (max-width: 768px) {
+        .navbar {
+            padding: 50px 50px;
+        }
+
+        .nav-links {
+            font-size: 28px;
+            gap: 40px;
+        }
+
+        .top-bar {
+            font-size: 26px!important;
+        }
+
+        .bottom-bar {
+            font-size: 24px;
+        }
+
+        .hero-buttons .btn {
+            padding: 30px 60px;
+            font-size: 1.8rem;
+        }
+
+        .hero-overlay {
+            max-width: 700px;
+            left: 5%;
+        }
+
+        .hero-overlay h1 {
+            font-size: 4rem;
+        }
+
+        .hero-overlay p {
+            font-size: 2rem;
+        }
+    }
