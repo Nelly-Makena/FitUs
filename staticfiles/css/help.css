@@ -302,3 +302,146 @@ button:hover {
     width: 100%;
     border-radius: 5px;
 }
+
+
+@media screen and (max-width: 768px) {
+    .sea-title {
+      font-size: 32px; /* reduced slightly */
+    }
+  
+    .sea-subtitle {
+      font-size: 16px; /* reduced slightly */
+    }
+  
+    .sea-search-box {
+      padding: 5px 20px; /* reduce side padding */
+      width: 90%;
+    }
+  
+    .sea-search-box input::placeholder {
+      font-size: 14px;
+    }
+  
+    .sea-search-box input {
+      font-size: 16px;
+      padding: 6px;
+      padding-left: 40px;
+    }
+  
+    .sea-search-btn {
+      font-size: 15px;
+      padding: 8px 20px;
+    }
+  
+    .sea-container {
+      height: auto;
+      padding: 30px 15px;
+    }
+    .card-container {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+        gap: 20px;
+    }
+
+    .card-item {
+        height: 140px;
+        padding: 10px;
+    }
+
+    .card-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-desc {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+    .faq-section {
+        margin-top: 2rem;
+        padding: 0 10px;
+    }
+
+    .faq-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .faq-item {
+        margin-bottom: 8px;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
+    .faq-icon {
+        font-size: 1.2rem;
+    }
+
+    .faq-answer {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    .contact-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .form-container {
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-top: 2rem;
+        margin-right: 0;
+        order: -1; /* This places the image container first */
+    }
+
+    .image-container img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .form-container h2 {
+        font-size: 30px;
+        margin-top: 2rem;
+    }
+
+    .form-container p {
+        font-size: 18px;
+        margin-bottom: 1rem;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input, textarea {
+        height: 45px;
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .terms label {
+        font-size: 12px;
+    }
+  }
+  
