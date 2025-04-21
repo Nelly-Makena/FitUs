@@ -1,10 +1,17 @@
 {% load static %}
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/shop.css' %}">
+</head>
 {% block body %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/shop.css' %}">
-
-<section>
+<section class="fixed">
     <div class="top-bar"><div class="words">Free shipping over $200</div></div>
     <div class="separator"></div>
     <div class="navbar">
@@ -18,7 +25,6 @@
         </div>
     </div>
     <div class="bottom-bar" id="dynamic-text">⚡ Push Your Limits!️</div>
-
 </section>
 
 <section class="hero-section">
@@ -36,32 +42,7 @@
     </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="{% static 'js/shop.js' %}"></script>
+</html>
 
 {% endblock %}
