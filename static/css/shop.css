@@ -127,4 +127,58 @@ body {
     transition: 0.3s ease-in-out;
 }
 
+@media (max-width: 768px) {
+    .top-bar {
+        font-size: 14px;
+    }
+    .words {
+        margin-left: 1rem;
+    }
+    .navbar {
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    .nav-links {
+        gap: 10px;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .bottom-bar{
+        font-size: 14px;
+    }
+}
 
+@media (max-width: 480px) {
+    .hero-section {
+        height: 90vh;
+    }
+    .hero-overlay {
+        left: 5%;
+        max-width: 90%;
+    }
+    .hero-overlay h1 {
+        font-size: 1.6rem;
+    }
+    .hero-overlay p {
+        font-size: 0.95rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

@@ -60,6 +60,26 @@ body{
     color: #000;
     transform: scale(1.02); 
 }
+@media (max-width: 768px) {
+    .nutrition-overlay {
+        margin-top: 8rem;
+    }
+
+    .nutrition-overlay h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    .nutrition-overlay p {
+        font-size: 1.2rem;
+        font-weight: 549;
+    }
+
+    .nutrition-button {
+        padding: 15px 36px;
+        font-size: 1.1rem;
+    }
+}
 
 .images-gallery {
     display: grid;
@@ -165,6 +185,47 @@ body{
 .images-food2 { background-image: url("/static/Images/nutrition_3.webp"); }
 .images-food3 { background-image: url("/static/Images/nutrition_4.jpeg"); }
 .images-food4 { background-image: url("/static/Images/nutrition_5.jpeg"); }
+@media (max-width: 768px) {
+    .images-gallery {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .images-item {
+        min-height: 400px; /* Make each image section longer */
+    }
+
+    .images-item h1 {
+        font-size: 28px;
+        top: 25%;
+    }
+
+    .images-overlay {
+        opacity: 1 !important; /* Always visible */
+        position: static; /* Let it flow naturally */
+        background: rgba(0, 0, 0, 0.2); /* Keep background dark */
+        padding: 20px;
+    }
+
+    .images-overlay p,
+    .images-overlay hr {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .images-overlay p {
+        font-size: 16px;
+        letter-spacing: 1px;
+        
+    }
+
+    .images-overlay hr {
+        width: 100px;
+        margin: 1rem auto;
+        margin-top: 3rem;
+    }
+}
 
 
 .vid-success-stories {
@@ -266,6 +327,63 @@ body{
     background:#cfd8dc;
 }
 
+@media (max-width: 768px) {
+    .vid-success-stories {
+        padding: 40px 10px;
+    }
+
+    .vid-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .vid-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .vid-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .vid-card {
+        width: 100%;
+    }
+
+    .vid-img {
+        height: 300px;
+    }
+
+    .play-btn {
+        font-size: 1.1em;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        bottom: 8px;
+        left: 10px;
+    }
+
+    .vid-overlay {
+        font-size: 1em;
+        left: 55px;
+    }
+
+    .vid-overlay span {
+        font-size: 0.9em;
+    }
+
+    .vid-cta-text {
+        font-size: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .vid-cta {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
 
 
 .nut-container {
@@ -338,6 +456,71 @@ body{
     height: 770px;
 }
 
+@media (max-width: 768px) {
+    .nut-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 30px 15px;
+        height: auto;
+        gap: 20px;
+    }
+
+    .nut-text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .nut-text-content h1 {
+        font-size: 30px;
+        margin-bottom: 1rem;
+    }
+
+    .nut-text-content h3 {
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .nut-text-content p {
+        font-size: 16px;
+        margin-bottom: 2rem;
+    }
+
+    .nut-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Add space between buttons */
+        width: 100%; /* Make the buttons fill the width */
+        max-width: 450px; /* Set max width for the button row */
+        margin-bottom: 2rem;
+    }
+
+    .nut-buttons img {
+        width: 200px; /* Set the button image width to make it longer */
+        height: auto;
+    }
+
+    .nut-cta {
+        font-size: 18px;
+        padding: 15px 25px; /* Wider button */
+        width: 100%;
+        max-width: 300px; /* Make the button's width responsive */
+        text-align: center;
+    }
+
+    .nut-image-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        order: -1; /* This makes the phone image appear first */
+    }
+
+    .nut-image-content img {
+        width: 90%;
+        height: auto;
+    }
+}
 
 .eat-container {
     position: relative;
@@ -383,3 +566,26 @@ body{
 .eat-button:hover {
     background: #ddd;
 }
+@media (max-width: 768px) {
+    .eat-container {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .eat-play {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 2rem;
+    }
+
+    .eat-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .eat-button {
+        padding: 12px 18px;
+        font-size: 1.2rem;
+    }
+}
+
