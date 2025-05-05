@@ -216,7 +216,7 @@ html, body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
+    min-width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
     object-fit: cover;
@@ -606,22 +606,17 @@ html, body {
         padding: 20px;
       }
     
-      #testimonial-1, #testimonial-2 {
+      #testimonial-1 {
         display: inline-block;
-        width: 60vw;
-        max-width: 280px;
         padding: 20px;
         margin: 0;
+        margin-right: 0rem!important;
+        margin-left: 0rem!important;
+      }
+      #testimonial-2 {
+        display: none;
       }
       
-      #testimonial-2 {
-        position: absolute;
-        top: 20px;
-        left: 80vw; /* adjusted to avoid too much overlap */
-        opacity: 0.6;
-        z-index: 0;
-        pointer-events: none;
-      }
       
     
       #prev-btn,
@@ -629,7 +624,7 @@ html, body {
         display: none;
       }
       
-      #testimonial-title-1, #testimonial-title-2 {
+      #testimonial-title-1{
         font-size: 16px;
         font-weight: 400;
         letter-spacing: 0.5px;
@@ -637,21 +632,18 @@ html, body {
     }
     
     /* More specific paragraph styles */
-    #testimonial-text-1, #testimonial-text-2 {
+    #testimonial-text-1{
         font-size: 12px;
         line-height: 1.8;
        
        
     }
-    #profile-1, #profile-2 span{
+    #profile-1 span{
    
         letter-spacing: 1.5px;
         font-weight: 500;
         font-size: 13px;
         
-    }
-     #profile-2 img {
-       margin-top: 1rem;
     }
 }
 
