@@ -19,3 +19,7 @@ def help_view(request):
 def shop_view(request):
     context = {}
     return render(request, 'shop.html', context)
+
+def get_view(request):
+    context = {}
+    return render(request, 'get.html', context)
