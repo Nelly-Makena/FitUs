@@ -386,12 +386,12 @@ nav {
 }
 
 .app-content-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 100px;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  position: relative;
 }
+
 
 .app-text-content {
     width: 35%;
@@ -413,11 +413,12 @@ nav {
 }
 
 .app-phone-wrapper {
-    position: sticky;
-    top:15vh;
-    width: 335px;
-    height: 710px;
-    z-index: 1;
+  position: sticky;
+  top: 15vh;
+  width: 335px;
+  height: 710px;
+  z-index: 1;
+  margin: 0 auto 5rem;
 }
 
 .app-phone {
