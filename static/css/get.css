@@ -3,5 +3,157 @@ body {
     background-size: cover;       
     background-position: center;  
     background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-attachment: fixed;
+    margin: 0;
+    font-family: sans-serif;
+     text-align: center;
+  padding: 40px 20px;
+}
+
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 5px 0 20px;
+  font-size: 18px;
+}
+
+.extra-plan-buttons {
+  display: inline-flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.extra-plan-buttons button {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+
+.extra-plan-buttons .extra-active {
+  background: #e0e0e0;
+  color: #111;
+}
+
+.extra-plan-buttons .extra-tag {
+  background: linear-gradient(to right, #4e00c2, #b900b4);
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.extra-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.extra-card {
+  background: #f5f5f5;
+  color: #111;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.extra-card h2 {
+  margin-top: 0;
+}
+
+.extra-desc {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.extra-old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.extra-price {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.extra-access {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.extra-card-btn, .extra-super-btn, .extra-learn-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.extra-card-btn:hover, .extra-super-btn:hover, .extra-learn-btn:hover {
+  background: #333;
+}
+
+.extra-highlight-card {
+  border: 3px solid #4e00c2;
+  position: relative;
+}
+
+.extra-limited-offer {
+  background: #0c3ec2;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.extra-super-title {
+  color: #4e00c2;
+  margin-top: 10px;
+}
+
+.extra-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+.extra-super-btn {
+  background: linear-gradient(to right, #4e00c2, #b900b4);
+}
+
+.extra-learn-btn {
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+}
+
+.extra-learn-btn:hover {
+  background: #ddd;
 }
