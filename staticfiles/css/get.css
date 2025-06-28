@@ -3,5 +3,134 @@ body {
     background-size: cover;       
     background-position: center;  
     background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-attachment: fixed;
+    margin: 0;
+    font-family: sans-serif;
+     text-align: center;
+}
+
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 30px;
+  margin-top: 100px;
+  color:#FFFFFF;
+  line-height: 1;
+}
+
+p {
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.extra-plan-buttons {
+  display: inline-flex;
+  gap: 0;
+  margin-bottom: 40px;
+  background: #222;
+  padding: 5px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.extra-plan-buttons button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+}
+
+.extra-plan-buttons button:hover {
+  background: #333;
+}
+
+.extra-plan-buttons .extra-active {
+  background: #f0f0f0;
+  color: #111;
+  border-radius: 4px;
+}
+
+.extra-plan-buttons .extra-tag {
+  background: linear-gradient(to right, #4e00c2, #b900b4);
+  color: #fff;
+  font-size: 14px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+
+.extra-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.extra-card {
+  background: #f5f5f5;
+  color: #111;
+  padding: 30px 25px;
+  width: 420px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  min-height: 420px;
+}
+
+.extra-card h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.extra-desc {
+  font-size: 16px;
+  margin: 16px 0 26px;
+  color: #5f6b6f;
+  line-height: 1.5;
+}
+
+.extra-old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.extra-price {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.extra-access {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.extra-card-btn {
+  background: #fff;
+  color: #111;
+  border: 1px solid #111;
+  padding: 14px 22px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.extra-card-btn:hover {
+  background: #111;
+  color: #fff;
 }
