@@ -1,27 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const textSections = document.querySelectorAll(".app-text");
-    const phoneImage = document.getElementById("app-phone-image");
+const phoneImage = document.getElementById('phoneImage');
+const textBlocks = document.querySelectorAll('.text-block');
 
-    function updatePhoneImage() {
-        let current = null;
-        textSections.forEach((section) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                current = section;
-            }
-        });
-
-        if (current) {
-            const newImage = current.getAttribute("data-image");
-            if (phoneImage.src !== newImage) {
-                phoneImage.src = newImage;
-            }
-        }
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const newImage = entry.target.dataset.image;
+      phoneImage.src = newImage;
     }
+  });
+}, { threshold: 0.5 });
 
-    window.addEventListener("scroll", updatePhoneImage);
-    updatePhoneImage(); // first image
-});
+textBlocks.forEach(block => observer.observe(block));
+
 
 document.querySelectorAll(".vedio-item").forEach(item => {
     item.addEventListener("click", () => {
@@ -29,3 +19,5 @@ document.querySelectorAll(".vedio-item").forEach(item => {
         window.open(videoUrl, "_blank");
     });
 });
+
+

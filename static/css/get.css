@@ -68,12 +68,11 @@ p {
   z-index: 2;
 }
 
-
 .extra-cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 0; /* Remove the gap */
   margin-top: 40px;
 }
 
@@ -88,23 +87,34 @@ p {
   min-height: 420px;
 }
 
+/* Target the second card and shift it left by 30px */
+.extra-card:nth-child(2) {
+  margin-left: -80px;
+  z-index: 2;
+  margin-top: 7rem;
+}
+
+
 .extra-card h2 {
   margin-top: 0;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 25px;
+  font-weight: 550;
+  letter-spacing:1px;
+
 }
 
 .extra-desc {
-  font-size: 16px;
+  font-size: 17px;
   margin: 16px 0 26px;
   color: #5f6b6f;
   line-height: 1.5;
+  font-weight: 300;
 }
 
 .extra-old-price {
   text-decoration: line-through;
   color: #888;
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 5px;
 }
 
@@ -112,6 +122,8 @@ p {
   font-size: 32px;
   font-weight: bold;
   margin: 10px 0;
+  color: #222;
+  
 }
 
 .extra-access {
