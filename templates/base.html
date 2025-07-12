@@ -40,7 +40,7 @@
 
     <div class="nav-right">
     <span class="hide-on-mobile">EN</span>
-    <a href="#" class="login">Log In</a>
+    <a href="{% url 'UI:login' %}" class="login">Log In</a>
     {% if request.path != '/get/' %}
         <a href="{% url 'UI:get' %}" class="start-now hide-on-mobile">Start now →</a>
     {% endif %}

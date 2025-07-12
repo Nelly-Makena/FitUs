@@ -3,6 +3,10 @@ def home_view(request):
     context = {}
     return render(request, 'home.html', context)
 
+def login_view(request):
+    context = {}
+    return render(request, 'login.html', context)
+
 def training_view(request):
     context = {}
     return render(request, 'training.html', context)
