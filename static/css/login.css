@@ -6,8 +6,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    font-size: 22px;
 }
 
 .container {
@@ -15,28 +16,38 @@ body {
 }
 
 .logo {
-    width: 80px;
-    margin-bottom: 30px;
+    width: 100px;
+    margin-bottom: 40px;
 }
 
 h1 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 38px;
 }
 
 p {
     color: #ccc;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 
 .btn {
     display: block;
-    width: 250px;
-    padding: 12px;
-    margin: 10px auto;
+    width: 320px;
+    padding: 18px;
+    margin: 20px auto;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    font-size: 20px;
+    text-align: center;
     cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 0;
 }
 
 .google-btn {
@@ -44,16 +55,77 @@ p {
     color: #333;
 }
 
-.email-btn {
-    background-color: #2c3e50;
-    color: #fff;
+.icon {
+    width: 24px;
+    vertical-align: middle;
+    margin-right: 15px;
 }
 
-a {
+.email-link {
+    background-color: transparent;
     color: #bbb;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 5px;
+    transition: all 0.3s ease;
+}
+
+.email-link:hover {
+    background-color: #2c3e50;
+    color: #fff;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+@media screen and (max-width: 768px) {
+    body {
+        justify-content: flex-start;
+        padding-top: 40px;
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 80px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 34px;
+        margin-bottom: 18px;
+    }
+
+    p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        width: 90%;
+        max-width: 340px;
+        padding: 18px;
+        font-size: 20px;
+        margin: 18px auto;
+    }
+
+    .icon {
+        width: 22px;
+        margin-right: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding-top: 30px;
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .btn {
+        padding: 16px;
+        width: 95%;
+        max-width: 340px;
+        font-size: 20px;
+    }
 }
