@@ -79,8 +79,8 @@ a {
 
 @media screen and (max-width: 768px) {
     body {
-        justify-content: center;
-        padding-top: 0;
+        justify-content: flex-start;
+        padding-top: 20px;
     }
 
     .container {
@@ -88,26 +88,26 @@ a {
     }
 
     .logo {
-        width: 80px;
+        width: 110px;
         margin-bottom: 30px;
     }
 
     h1 {
-        font-size: 34px;
+        font-size: 30px;
         margin-bottom: 18px;
     }
 
     p {
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 30px;
     }
 
     .btn {
         width: 90%;
-        max-width: 340px;
-        padding: 18px;
-        font-size: 20px;
-        margin: 18px auto;
+        max-width: 300px;
+        padding: 14px;
+        font-size: 18px;
+        margin: 16px auto;
     }
 
     .icon {
@@ -118,32 +118,37 @@ a {
 
 @media screen and (max-width: 480px) {
     body {
-        font-size: 24px;
-        justify-content: center;
-        padding-top: 0;
+        font-size: 20px;
+        justify-content: flex-start;
+        padding-top: 20px;
     }
 
     .container {
         padding: 0 16px;
     }
 
+    .logo {
+        width: 120px;
+        margin-bottom: 28px;
+    }
+
     h1 {
-        font-size: 36px;
+        font-size: 28px;
     }
 
     p {
-        font-size: 22px;
+        font-size: 17px;
     }
 
     .btn {
-        padding: 18px;
+        padding: 14px;
         width: 95%;
-        max-width: 340px;
-        font-size: 22px;
+        max-width: 280px;
+        font-size: 17px;
     }
 
     .icon {
-        width: 26px;
-        margin-right: 14px;
+        width: 22px;
+        margin-right: 12px;
     }
 }

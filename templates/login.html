@@ -2,7 +2,15 @@
 
 {% block body %}
 
-<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ This is the fix -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
 
 <div class="container">
     <img src="{% static 'Images/logo.png' %}" alt="Freeletics Logo" class="logo">
@@ -15,6 +23,9 @@
 
     <a href="#" class="btn email-link">Log in with Email</a>
 </div>
+
+</body>
+</html>
 
 {% endblock %}
 

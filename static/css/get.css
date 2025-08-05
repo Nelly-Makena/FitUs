@@ -1,0 +1,223 @@
+body {
+  background-image: url('/static/Images/get.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 30px;
+  margin-top: 100px;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+p {
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.extra-plan-buttons {
+  display: inline-flex;
+  gap: 0;
+  margin-bottom: 40px;
+  background: #222;
+  padding: 5px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.extra-plan-buttons button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+}
+
+.extra-plan-buttons button:hover {
+  background: #333;
+}
+
+.extra-plan-buttons .extra-active {
+  background: #f0f0f0;
+  color: #111;
+  border-radius: 4px;
+}
+
+.extra-plan-buttons .extra-tag {
+  background: linear-gradient(to right, #4e00c2, #b900b4);
+  color: #fff;
+  font-size: 14px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.extra-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin-top: 40px;
+}
+
+.extra-card {
+  background: #f5f5f5;
+  color: #111;
+  padding: 30px 25px;
+  width: 420px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  min-height: 420px;
+}
+
+.extra-card:nth-child(2) {
+  margin-left: -80px;
+  z-index: 2;
+  margin-top: 7rem;
+}
+
+.extra-card h2 {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: 550;
+  letter-spacing: 1px;
+}
+
+.extra-desc {
+  font-size: 17px;
+  margin: 16px 0 26px;
+  color: #5f6b6f;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.extra-old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.extra-price {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #222;
+}
+
+.extra-access {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.extra-card-btn {
+  background: #fff;
+  color: #111;
+  border: 1px solid #111;
+  padding: 14px 22px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.extra-card-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 35px;
+    margin-top: 150px;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+
+  .extra-plan-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3px;
+    gap: 5px;
+  }
+
+  .extra-plan-buttons button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .extra-plan-buttons .extra-tag {
+    font-size: 12px;
+    padding: 4px 8px;
+    top: -10px;
+    right: -6px;
+  }
+
+  .extra-cards-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .extra-card:nth-child(1) {
+    width: 75%;
+    min-height: auto;
+  }
+
+  .extra-card:nth-child(2) {
+    width: 80%;
+    min-height: auto;
+    margin-top: -20px;
+    margin-left: 0;
+    margin-bottom: 7rem;
+    z-index: 2;
+  }
+
+  .extra-card h2 {
+    font-size: 22px;
+  }
+
+  .extra-desc {
+    font-size: 15px;
+    margin: 14px 0 20px;
+  }
+
+  .extra-old-price {
+    font-size: 16px;
+  }
+
+  .extra-price {
+    font-size: 28px;
+  }
+
+  .extra-access {
+    font-size: 13px;
+  }
+
+  .extra-card-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+
