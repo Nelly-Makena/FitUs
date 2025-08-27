@@ -54,6 +54,7 @@ nav {
     margin-bottom: 3rem;
 
 }
+
 .training-cta-button {
     background-color: #fff;
     padding: 10px 25px; /* Increased padding */
@@ -62,6 +63,11 @@ nav {
     font-weight: bold;
     font-size: 18px; /* Increased font size */
     transition: all 0.3s ease-in-out;
+    
+}
+a.training-cta-button {
+  text-decoration: none !important;
+  color: inherit;
 }
 
 .training-cta-button:hover {

@@ -10,7 +10,7 @@
         <div class="training-content">
             <h1>Easy to use.<br> Effective. Tailored to your needs.</h1>
             <p>Over 350 exercises and personalized workouts that help you to become strong inside and out.</p>
-            <a href="{% url 'UI:get' %}" class="training-cta-button">Start now →</a>        </div>
+            <a href="{% url 'UI:get' %}" class="training-cta-button">Start now →</a></div>
         <div class="trainings-image-container">
             <img src="{% static 'Images/training.png' %}" alt="Workout Image">
             <div class="training-overlay"></div>
@@ -46,7 +46,7 @@
         <p class="journey-text">
             Your Coach analyzes your fitness and goals, paving your individual path to success.
         </p>
-        <a href="#" class="journey-btn">Find your journey →</a>
+        <a href="{% url 'UI:progress' %}" class="journey-btn">Find your journey →</a>
     </div>
 
     <div class="journey-image-grid">

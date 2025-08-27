@@ -27,3 +27,7 @@ def shop_view(request):
 def get_view(request):
     context = {}
     return render(request, 'get.html', context)
+
+def progress_view(request):
+    context = {}
+    return render(request, 'progress.html', context)

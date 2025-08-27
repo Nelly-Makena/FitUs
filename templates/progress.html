@@ -1,0 +1,46 @@
+{% load static %}
+
+{% block body %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FitUs — assessment</title>
+  <link rel="stylesheet" href="{% static 'css/progress.css' %}" />
+</head>
+<body>
+  <main class="app">
+    <div class="card" role="region" aria-labelledby="questionText">
+      <header class="top">
+        <button id="backBtn" class="icon-btn" aria-label="Go back" disabled><</button>
+        <div class="progress">
+          <div class="bar"><span id="barFill"></span></div>
+          <div class="count"><span id="stepNum">1</span>/<span id="totalNum">7</span></div>
+        </div>
+      </header>
+
+      <section class="content">
+        <h1 id="questionText">Question</h1>
+        <div class="help" id="helpText">Help text</div>
+
+        <!-- Options / Inputs container -->
+        <div id="options" class="options" role="group" aria-labelledby="questionText"></div>
+      </section>
+
+      <footer class="bottom">
+        <button id="nextBtn" class="cta" disabled>Next →</button>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
+
+
+<script src="{% static 'js/progress.js' %}"></script>
+
+
+{% endblock %}
+{% block footer %}{% endblock %}
+
