@@ -9,7 +9,9 @@
         <div class="nutrition-overlay">
             <h1 class="nutrition-heading">Eat clean.<br>Reach your goals.</h1>
             <p class="nutrition-subtext">Cutting-edge digital nutrition coach. Tailored meal plans. Foodie-grade recipes.</p>
-            <button class="nutrition-button">Start eating clean now →</button>
+            <button class="nutrition-button" onclick="window.location.href='{% url 'UI:survey' %}'">
+                Start eating clean now →
+                </button>
         </div>
     </section>
 <section class="images-gallery">
@@ -71,7 +73,7 @@
     </div>
 
     <p class="vid-cta-text">Are you ready to become the next success story?</p>
-    <a href="#" class="vid-cta">Start your fitness journey now →</a>
+    <a href="{% url 'UI:survey' %}" class="vid-cta">Start eating clean now →</a>
 </section>
 
 <section class="nut-container">
@@ -83,7 +85,7 @@
                 <img src="{% static 'Images/app_store.svg' %}" alt="Download on the App Store">
                 <img src="{% static 'Images/play_store.svg' %}" alt="Get it on Google Play">
             </div>
-            <a href="#" class="nut-cta">Start eating clean now →</a>
+            <a href="{% url 'UI:survey' %}" class="nut-cta">Start eating clean now →</a>
         </div>
         <div class="nut-image-content">
             <img src="{% static 'Images/nut_pic.png' %}" alt="App Preview">
@@ -96,7 +98,7 @@
                 <img src="{% static 'Images/play.svg' %}" alt="Play" class="eat-play">
             </a>
             <div class="eat-title">I am what I eat</div>
-            <a href="#" class="eat-button">Start eating clean now →</a>
+            <a href="{% url 'UI:survey' %}" class="eat-button">Start eating clean now →</a>
         </div>
     </section>
 <script src="nutrition.js"></script>

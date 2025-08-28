@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/survey.css' %}">
+</head>
+<body>
+<div class="container">
+    <!-- Progress dots -->
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step active">
+        <h2>How much do you spend on fitness every month?</h2>
+        <p>Consider all gym, personal trainer, subscription, and equipment costs.</p>
+        <div class="input-wrapper">
+            <span class="currency">Ksh</span>
+            <input type="number" class="input-field" placeholder="2500">
+            <span>per month</span>
+        </div>
+        <div class="btn-group">
+            <button class="btn next">Next →</button>
+        </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+        <h2>How much do you spend on nutrition every month?</h2>
+        <p>Include supplements, healthy meals, and related costs.</p>
+        <div class="input-wrapper">
+            <span class="currency">Ksh</span>
+            <input type="number" class="input-field" placeholder="5000">
+            <span>per month</span>
+        </div>
+        <div class="btn-group">
+            <button class="btn back">← Back</button>
+            <button class="btn next">Next →</button>
+        </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+        <h2>How many days per week do you work out?</h2>
+        <p>Include gym, running, sports, and home workouts.</p>
+        <div class="input-wrapper">
+            <input type="number" class="input-field" placeholder="3" min="1" max="7">
+            <span>days</span>
+        </div>
+        <div class="btn-group">
+            <button class="btn back">← Back</button>
+            <button class="btn next">Next →</button>
+        </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+        <h2>How long is your commute to the gym or park?</h2>
+        <p>Estimate in minutes (one way).</p>
+        <div class="input-wrapper">
+            <input type="number" class="input-field" placeholder="20">
+            <span>minutes</span>
+        </div>
+        <div class="btn-group">
+            <button class="btn back">← Back</button>
+            <button class="btn finish">Finish ✔</button>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/survey.js' %}"></script>
+</body>
+</html>

@@ -126,7 +126,7 @@
 
   </div>
 
-  <a href="#" class="app-start-button">Start Now →</a>
+  <a href="{% url 'UI:progress' %}" class="app-start-button">Start Now →</a>
 
 </div>
 
@@ -165,7 +165,10 @@
         </div>
     </div>
 
-    <button class="vedio-cta">Become a Free Athlete →</button>
+    <button class="vedio-cta" onclick="window.location.href='{% url 'UI:progress' %}'">
+  Become a Free Athlete →
+</button>
+
 </section>
 <section>
 <div class="last-section">
@@ -179,8 +182,10 @@
                 <li class="last-item">Digital AI coaching</li>
                 <li class="last-item">Nutrition guidance</li>
             </ul>
-            <button class="last-button">Compare your costs →</button>
-        </div>
+
+<button class="last-button" onclick="window.location.href='{% url 'UI:survey' %}'">
+  Compare your Costs  →
+</button>
     </div>
 </div>
 

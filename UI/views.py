@@ -31,3 +31,10 @@ def get_view(request):
 def progress_view(request):
     context = {}
     return render(request, 'progress.html', context)
+
+def survey_view(request):
+    context = {}
+    return render(request, 'survey.html', context)
+
+
+

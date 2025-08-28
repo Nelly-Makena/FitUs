@@ -295,11 +295,11 @@ function showSummary() {
     </div>
   `;
 
-    // CTA link to get page
+// CTA link to get page
     const ctaWrap = document.createElement("div");
     ctaWrap.style.marginTop = "14px";
 
-    // Make sure the URL is always absolute
+    // Ensure absolute URL
     let absoluteUrl = getUrl;
     if (!absoluteUrl.startsWith("/")) {
       absoluteUrl = "/" + absoluteUrl;
@@ -307,7 +307,9 @@ function showSummary() {
 
     ctaWrap.innerHTML = `<a class="cta-link" href="${absoluteUrl}">Train with FitUs →</a>`;
 
-    // Append only once (remove duplicate appendChilds)
+    // Append everything in the right order
+    optionsEl.appendChild(summaryWrap);
+    optionsEl.appendChild(compareWrap);
     optionsEl.appendChild(ctaWrap);
 
   // Hide nav buttons and animate bars

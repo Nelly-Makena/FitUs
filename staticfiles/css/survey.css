@@ -1,0 +1,158 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #1e2a2f;
+  color: white;
+  display: flex;
+  justify-content: flex-start; /* left aligned */
+  align-items: center; /* vertically center */
+  height: 100vh;
+  padding: 40px;
+}
+
+.container {
+  max-width: 700px;
+  text-align: left;
+}
+
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
+
+h2 {
+  color: #ff6600;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+p {
+  color: #cfd6d8;
+  margin-bottom: 25px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 40px; /* space before buttons */
+}
+
+.input-field {
+  width: 150px; /* shorter input */
+  font-size: 2rem;
+  text-align: left;
+  border: none;
+  border-bottom: 3px solid #cfd6d8;
+  background: transparent;
+  color: white;
+  outline: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.currency {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.btn-group {
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 0; /* removed radius */
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+/* Back button: black bg, white text */
+.btn.back {
+  background: black;
+  color: white;
+}
+.btn.back:hover {
+  background: #333;
+}
+
+/* Next button: white bg, black text */
+.btn.next {
+  background: white;
+  color: black;
+}
+.btn.next:hover {
+  background: #ff6600;
+  color: white;
+}
+
+/* Finish button same as Next */
+.btn.finish {
+  background: white;
+  color: black;
+}
+.btn.finish:hover {
+  background: #28a745;
+  color: white;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+
+.dot {
+  height: 14px;
+  width: 14px;
+  margin: 0 8px 0 0;
+  background-color: #555;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: #dcdcdc; /* grayish white highlight */
+}
+
+
+/* spacing between components */
+.dots {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 45px; /* more space before buttons */
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
