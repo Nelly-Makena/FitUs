@@ -295,14 +295,22 @@ function showSummary() {
     </div>
   `;
 
-   // CTA link to get page
-   const ctaWrap = document.createElement("div");
-   ctaWrap.style.marginTop = "14px";
-   ctaWrap.innerHTML = `<a class="cta-link" href="get/">Train with FitUs →</a>`;
+// CTA link to get page
+    const ctaWrap = document.createElement("div");
+    ctaWrap.style.marginTop = "14px";
 
-  optionsEl.appendChild(summaryWrap);
-  optionsEl.appendChild(compareWrap);
-  optionsEl.appendChild(ctaWrap);
+    // Ensure absolute URL
+    let absoluteUrl = getUrl;
+    if (!absoluteUrl.startsWith("/")) {
+      absoluteUrl = "/" + absoluteUrl;
+    }
+
+    ctaWrap.innerHTML = `<a class="cta-link" href="${absoluteUrl}">Train with FitUs →</a>`;
+
+    // Append everything in the right order
+    optionsEl.appendChild(summaryWrap);
+    optionsEl.appendChild(compareWrap);
+    optionsEl.appendChild(ctaWrap);
 
   // Hide nav buttons and animate bars
   backBtn.style.display = "none";

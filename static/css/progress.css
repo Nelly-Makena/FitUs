@@ -1,9 +1,12 @@
 * { box-sizing: border-box }
+body, body * {
+  font-family: Arial, sans-serif !important;
+}
+
 html, body {
   height: 100%;
   margin: 0;
   font-family:  Arial, sans-serif !important;
-  color: #e7eef4;
   background: rgb(55,71,79);
 }
 
@@ -15,11 +18,14 @@ html, body {
 }
 
 .card {
-  width: min(820px, 95vw);
-  background: #102129;
+  width: min(95vw, 600px); 
+  height: max(95vh, 600px);
+  background: #263238;
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,0.03);
+  color: #a9c8c5;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 /* Top */
@@ -42,6 +48,7 @@ html, body {
 .icon-btn[disabled] {
   opacity: .35;
   cursor: not-allowed;
+  font-size: 50px;
 }
 
 .progress {
@@ -76,24 +83,33 @@ h1 {
   margin: 18px 0 12px;
   font-size: clamp(20px, 2.2vw + 12px, 30px);
 }
+
+#questionText{
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+}
+
 .help {
-  background: #0b3b55;
+  background: #1c4760;
   color: #d0eaff;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  font-size: 14px;
+  padding: 20px;
+  border-radius: 0px;
+  margin-bottom: 40px;
+  font-size: 17px;
+  letter-spacing: 1.5px;
 }
 
 /* Options */
 .options {
   display: grid;
-  gap: 12px;
+  gap: 50px;
 }
 .option {
   border: 1px solid #2a3c45;
-  border-radius: 10px;
-  padding: 12px 14px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border-radius: 0px;
+  padding: 20px 14px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -110,7 +126,8 @@ h1 {
   box-shadow: 0 0 0 2px rgba(13,121,208,.12) inset;
 }
 .option .icon {
-  font-size: 20px;
+  font-size: 30px;
+  filter: grayscale(100%) brightness(0.6);
 }
 
 .input-row {
@@ -137,19 +154,23 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
 .cta {
   width: 100%;
-  padding: 14px 18px;
-  font-size: 16px;
+  padding: 20px 18px;
+  font-size: 20px;
   border: 0;
-  border-radius: 999px;
-  color: white;
-  background: linear-gradient(180deg, #0d79d0, #0b67b2);
+  border-radius: 0px;
+  margin-top: 40px;
+  letter-spacing: 1.5px;
+  background: #1c4760;
+  color: #d0eaff;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(13,121,208,.35);
+  font-weight: 500;
 }
+
 .cta[disabled] {
-  opacity: .45;
+  opacity: .65;
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -157,8 +178,11 @@ h1 {
 /* Summary visuals */
 .summary {
   display: grid;
-  gap: 10px;
+  gap: 25px;
   margin-top: 8px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 300;
 }
 .summary .row {
   display: grid;
@@ -199,10 +223,23 @@ h1 {
 }
 
 .cta-link {
-  display: inline-block;
+  width: 100%;
+  padding: 17px 23px;
+  font-size: 18px;
+  border: 0;
+  border-radius: 0px;
+  letter-spacing: 1.5px;
+  background: #1c4760;
+  color: #d0eaff;
+  cursor: pointer;
+  font-weight: 500;
   text-decoration: none;
-  background: #0d79d0;
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 10px;
+}
+
+
+@media (max-width: 600px) {
+  .card {
+    width: 350px;
+    height: auto; /* Let content define height */
+  }
 }

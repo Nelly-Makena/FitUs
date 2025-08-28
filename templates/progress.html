@@ -34,13 +34,14 @@
       </footer>
     </div>
   </main>
+
+  <!-- Django URL before your external JS -->
+  <script>
+    const getUrl = "{% url 'UI:get' %}";
+  </script>
+  <script src="{% static 'js/progress.js' %}"></script>
 </body>
 </html>
 
-
-<script src="{% static 'js/progress.js' %}"></script>
-
-
 {% endblock %}
 {% block footer %}{% endblock %}
-
