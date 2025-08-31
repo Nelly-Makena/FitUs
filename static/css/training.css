@@ -57,11 +57,11 @@ nav {
 
 .training-cta-button {
     background-color: #fff;
-    padding: 10px 25px; /* Increased padding */
+    padding: 10px 25px; 
     border: none;
     cursor: pointer;
     font-weight: bold;
-    font-size: 18px; /* Increased font size */
+    font-size: 18px; /
     transition: all 0.3s ease-in-out;
     
 }
@@ -71,7 +71,7 @@ a.training-cta-button {
 }
 
 .training-cta-button:hover {
-    background-color:#cfd8dc; /* Light gray hover effect */
+    background-color:#cfd8dc; 
 }
 .trainings-image-container{
     margin-right: 7rem;
@@ -235,7 +235,7 @@ a.training-cta-button {
 }
 
 .journey-content {
-    width: 30%; /* Adjust as needed */
+    width: 30%; 
     margin: 0;
 }
 .journey-subtitle{
@@ -322,7 +322,7 @@ a.training-cta-button {
     }
     
     .journey-text {
-        font-size: 18px; /* Adjust font size */
+        font-size: 18px; 
         text-align: center;
     }
 
@@ -361,15 +361,15 @@ a.training-cta-button {
 
 @media (max-width: 480px) {
     .journey-title {
-        font-size: 28px; /* Slightly smaller font size for very small screens */
+        font-size: 28px; 
     }
 
     .journey-text {
-        font-size: 14px; /* Smaller font size */
+        font-size: 14px; 
     }
 
     .journey-btn {
-        padding: 10px 25px; /* Adjust button padding for very small screens */
+        padding: 10px 25px; 
     }
 }
 

@@ -36,5 +36,11 @@ def survey_view(request):
     context = {}
     return render(request, 'survey.html', context)
 
+def results_view(request):
+    context = {}
+    return render(request, 'results.html', context)
+
+
+
 
 

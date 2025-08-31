@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Results</title>
+    <link rel="stylesheet" href="{% static 'css/results.css' %}">
+</head>
+<body>
+    <!-- Toggle buttons -->
+    <div class="toggle">
+        <button>3 MONTHS</button>
+        <button>12 MONTHS</button>
+        <button class="active">LIFETIME</button>
+    </div>
+
+    <div class="results-container">
+        <!-- Current setup -->
+        <div class="box left">
+            <h3>Your current setup</h3>
+            <p class="big"><span id="monthlyTotal"></span> <span class="light">per month</span></p>
+            <p>Your monthly costs with training —— <span id="fitnessCost"></span></p>
+            <p>Your monthly costs with nutrition —— <span id="nutritionCost"></span></p>
+            <p>Workout frequency —— <span id="workoutDays"></span></p>
+            <p>Commute time —— <span id="commuteTime"></span></p>
+        </div>
+
+        <!-- Offer -->
+        <div class="box right">
+            <h3>Freeletics Training and Nutrition Lifetime Access</h3>
+            <p class="sub">Invest in a lifetime of fitness</p>
+            <p class="big">€599.99</p>
+            <ul>
+                <li>✔ Adaptable workouts</li>
+                <li>✔ Nutrition plan tailored to your needs</li>
+                <li>✔ Workout anywhere, anytime</li>
+                <li>✔ Guidance and performance tracking</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button class="btn primary" onclick="window.location.href='{% url 'UI:get' %}'">
+            Invest in a lifetime of fitness now! →
+        </button>
+        <button class="btn secondary" onclick="history.back()">← Back</button>
+    </div>
+
+    <script src="{% static 'js/results.js' %}"></script>
+</body>
+</html>
