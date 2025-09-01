@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e2a2f;
+    color: #000;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+.toggle {
+    margin-bottom: 50px;
+}
+
+.toggle button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    margin: 0 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.toggle .active {
+    background: white;
+    color: black;
+    border-radius: 3px;
+}
+
+.results-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.box {
+    flex: 1;
+    padding: 40px;
+    font-size: 22px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    min-width: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.box.right {
+    background: #f5faff;
+    border: 2px solid #0080ff;
+}
+
+h3 {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.big {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.light {
+    font-weight: normal;
+    font-size: 22px;
+}
+
+ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+.actions {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 15px 40px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn.primary {
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+.btn.secondary {
+  background: black;
+  color: white;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn.secondary:hover {
+  background: #222;
+  color: #f0f0f0;
+}
