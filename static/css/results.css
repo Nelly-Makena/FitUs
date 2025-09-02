@@ -97,13 +97,20 @@ ul li {
     color: black;
     font-weight: bold;
 }
+
 .btn.secondary {
-  background: black;
-  color: white;
-  transition: background 0.3s ease, color 0.3s ease;
+    background: black;
+    color: white;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn.secondary:hover {
-  background: #222;
-  color: #f0f0f0;
+    background: #222;
+    color: #f0f0f0;
+}
+
+/* Highlight dynamic spans */
+span {
+    font-weight: bold;
+    color: #333;
 }

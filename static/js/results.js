@@ -1,20 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("✅ results.js loaded");
+document.addEventListener('DOMContentLoaded', () => {
+    const data = JSON.parse(localStorage.getItem('surveyData'));
 
-    const fitness = parseFloat(localStorage.getItem("fitnessCost")) || 0;
-    const nutrition = parseFloat(localStorage.getItem("nutritionCost")) || 0;
-    const workoutDays = parseInt(localStorage.getItem("workoutDays")) || 0;
-    const commuteTime = parseInt(localStorage.getItem("commuteTime")) || 0;
+    if (!data) return;
 
-    const monthlyTotal = fitness + nutrition;
-
-    // Debugging
-    console.log("Loaded values:", { fitness, nutrition, workoutDays, commuteTime });
-
-    // Update DOM
-    document.getElementById("fitnessCost").textContent = `€${fitness.toFixed(2)}`;
-    document.getElementById("nutritionCost").textContent = `€${nutrition.toFixed(2)}`;
-    document.getElementById("workoutDays").textContent = workoutDays;
-    document.getElementById("commuteTime").textContent = commuteTime + " mins";
-    document.getElementById("monthlyTotal").textContent = `€${monthlyTotal.toFixed(2)}`;
+    document.getElementById('monthlyTotal').textContent = data.step0 || '—';
+    document.getElementById('fitnessCost').textContent = data.step1 || '—';
+    document.getElementById('nutritionCost').textContent = data.step2 || '—';
+    document.getElementById('workoutDays').textContent = data.step2 || '—';
+    document.getElementById('commuteTime').textContent = data.step3 || '—';
 });

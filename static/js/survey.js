@@ -4,6 +4,9 @@ const nextBtns = document.querySelectorAll('.next');
 const backBtns = document.querySelectorAll('.back');
 let currentStep = 0;
 
+// Store user input
+const userResponses = {};
+
 function showStep(index) {
     steps.forEach((step, i) => {
         step.classList.toggle('active', i === index);
@@ -11,17 +14,13 @@ function showStep(index) {
     });
 }
 
-// Validation before moving forward
 function validateStep(stepIndex) {
     const input = steps[stepIndex].querySelector('.input-field');
     if (!input) return true;
 
     const value = input.value.trim();
-
-    // must not be empty
     if (value === "") return false;
 
-    // specific rule for step 3 (days per week)
     if (stepIndex === 2) {
         const num = parseInt(value, 10);
         if (isNaN(num) || num < 1 || num > 7) return false;
@@ -32,11 +31,20 @@ function validateStep(stepIndex) {
 
 nextBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+        const input = steps[currentStep].querySelector('.input-field');
         if (validateStep(currentStep) && currentStep < steps.length - 1) {
+            if (input) {
+                userResponses[`step${currentStep}`] = input.value.trim();
+            }
             currentStep++;
             showStep(currentStep);
         } else {
             alert("Please enter a valid value before continuing.");
+        }
+
+        // If it's the last step, store data
+        if (currentStep === steps.length - 1) {
+            localStorage.setItem('surveyData', JSON.stringify(userResponses));
         }
     });
 });

@@ -1,11 +1,14 @@
+{% extends 'base.html' %}
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Results</title>
+
+{% block body %}
+
     <link rel="stylesheet" href="{% static 'css/results.css' %}">
 </head>
 <body>
@@ -21,17 +24,17 @@
         <div class="box left">
             <h3>Your current setup</h3>
             <p class="big"><span id="monthlyTotal"></span> <span class="light">per month</span></p>
-            <p>Your monthly costs with training —— <span id="fitnessCost"></span></p>
-            <p>Your monthly costs with nutrition —— <span id="nutritionCost"></span></p>
-            <p>Workout frequency —— <span id="workoutDays"></span></p>
-            <p>Commute time —— <span id="commuteTime"></span></p>
+            <p>Your monthly costs with training _ <span id="fitnessCost"></span></p>
+            <p>Your monthly costs with nutrition _ <span id="nutritionCost"></span></p>
         </div>
 
         <!-- Offer -->
         <div class="box right">
-            <h3>Freeletics Training and Nutrition Lifetime Access</h3>
+            <div class="box-header">
+        <h3>Freeletics Training and Nutrition Lifetime Access</h3>
+    </div>
             <p class="sub">Invest in a lifetime of fitness</p>
-            <p class="big">€599.99</p>
+            <p class="big">ksh.48,999.99</p>
             <ul>
                 <li>✔ Adaptable workouts</li>
                 <li>✔ Nutrition plan tailored to your needs</li>
@@ -51,3 +54,4 @@
     <script src="{% static 'js/results.js' %}"></script>
 </body>
 </html>
+{% endblock %}

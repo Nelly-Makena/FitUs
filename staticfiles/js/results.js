@@ -1,20 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("✅ results.js loaded");
+document.addEventListener('DOMContentLoaded', () => {
+    const data = JSON.parse(localStorage.getItem('surveyData'));
 
-    const fitness = parseFloat(localStorage.getItem("fitnessCost")) || 0;
-    const nutrition = parseFloat(localStorage.getItem("nutritionCost")) || 0;
-    const workoutDays = parseInt(localStorage.getItem("workoutDays")) || 0;
-    const commuteTime = parseInt(localStorage.getItem("commuteTime")) || 0;
+    if (!data) return;
 
-    const monthlyTotal = fitness + nutrition;
+    const training = parseFloat(data.step0) || 0;
+    const nutrition = parseFloat(data.step1) || 0;
 
-    // Debugging
-    console.log("Loaded values:", { fitness, nutrition, workoutDays, commuteTime });
+    // Total = training + nutrition
+    const total = training + nutrition;
 
-    // Update DOM
-    document.getElementById("fitnessCost").textContent = `€${fitness.toFixed(2)}`;
-    document.getElementById("nutritionCost").textContent = `€${nutrition.toFixed(2)}`;
-    document.getElementById("workoutDays").textContent = workoutDays;
-    document.getElementById("commuteTime").textContent = commuteTime + " mins";
-    document.getElementById("monthlyTotal").textContent = `€${monthlyTotal.toFixed(2)}`;
+    document.getElementById('monthlyTotal').textContent = `ksh.${total.toFixed(2)}`;
+    document.getElementById('fitnessCost').textContent = `ksh.${training.toFixed(2)}`;
+    document.getElementById('nutritionCost').textContent = `ksh.${nutrition.toFixed(2)}`;
 });

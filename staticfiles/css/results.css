@@ -1,14 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e2a2f;
+    background-color: #263238;
     color: #000;
-    margin: 0;
-    padding: 40px;
     text-align: center;
 }
 
 .toggle {
-    margin-bottom: 50px;
+    margin-bottom: 7rem;
+    margin-top: 15rem;
 }
 
 .toggle button {
@@ -16,94 +15,178 @@ body {
     border: none;
     font-size: 20px;
     color: white;
-    margin: 0 15px;
-    padding: 10px 20px;
+    margin: 0 6px;
+    padding: 20px 20px;
     cursor: pointer;
+    letter-spacing: 1.0px;
 }
 
 .toggle .active {
     background: white;
     color: black;
-    border-radius: 3px;
+    border-radius: 0px;
+    font-weight: 500;
 }
-
 .results-container {
     display: flex;
     justify-content: center;
-    align-items: stretch;
     gap: 40px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .box {
     flex: 1;
-    padding: 40px;
-    font-size: 22px;
+    padding: 30px;
+    font-size: 16px;
     background: #f5f5f5;
-    border-radius: 5px;
-    min-width: 400px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border-radius: 0px;
+    max-width: 500px;
+    color: rgb(84, 110, 112);
+    letter-spacing: 0.3px;
+    line-height: 1.6;
 }
 
+.box.left {
+    max-height: 300px;
+    margin-top: 3rem;
+    font-size: 17px;
+    line-height: 1.9;
+}
+.box.left p{
+    line-height: 2;
+}
 .box.right {
     background: #f5faff;
     border: 2px solid #0080ff;
+    max-height: 500px;
+}
+.box-header {
+    background-color: #cce6ff; 
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
 }
 
+.box-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #003366;
+}
+
+
 h3 {
-    font-size: 26px;
-    margin-bottom: 25px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .big {
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 36px;
+    font-weight: 700;
     margin: 20px 0;
+    color: #000;
+    letter-spacing: 0.5px;
+}
+
+.box.left .big {
+    color: #2c3e50;
+}
+
+.box.right .big {
+    color: #0080ff;
 }
 
 .light {
-    font-weight: normal;
-    font-size: 22px;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgb(84, 110, 112);
 }
 
 ul {
     text-align: left;
     list-style: none;
     padding: 0;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 20px;
 }
 
 ul li {
     margin: 10px 0;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+}
+
+@media (max-width: 768px) {
+    .results-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 100%;
+        max-width: 90%;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+
+    .big {
+        font-size: 32px;
+    }
+
+    .light, ul, p {
+        font-size: 16px;
+    }
+    .toggle {
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+}
+
 }
 
 .actions {
-    margin-top: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .btn {
-    font-size: 20px;
-    padding: 15px 40px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
-    margin: 10px;
+    margin: 13px;
+    padding: 14px 24px;
+    border-radius: 0px;
+    width: 370px; 
+    text-align: center; 
+    letter-spacing: 0.7px;
+    font-weight: 545;
 }
+
 
 .btn.primary {
     background: white;
     color: black;
-    font-weight: bold;
 }
+
 .btn.secondary {
-  background: black;
-  color: white;
-  transition: background 0.3s ease, color 0.3s ease;
+    background: black;
+    color: white;
 }
 
 .btn.secondary:hover {
-  background: #222;
-  color: #f0f0f0;
+    background: #263238;
+    color: #f0f0f0;
+}
+
+/* Highlight dynamic spans */
+span {
+    font-weight: bold;
+    color: #333;
 }
