@@ -3,9 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!data) return;
 
-    document.getElementById('monthlyTotal').textContent = data.step0 || '—';
-    document.getElementById('fitnessCost').textContent = data.step1 || '—';
-    document.getElementById('nutritionCost').textContent = data.step2 || '—';
-    document.getElementById('workoutDays').textContent = data.step2 || '—';
-    document.getElementById('commuteTime').textContent = data.step3 || '—';
+    const training = parseFloat(data.step0) || 0;
+    const nutrition = parseFloat(data.step1) || 0;
+
+    // Total = training + nutrition
+    const total = training + nutrition;
+
+    document.getElementById('monthlyTotal').textContent = `ksh.${total.toFixed(2)}`;
+    document.getElementById('fitnessCost').textContent = `ksh.${training.toFixed(2)}`;
+    document.getElementById('nutritionCost').textContent = `ksh.${nutrition.toFixed(2)}`;
 });

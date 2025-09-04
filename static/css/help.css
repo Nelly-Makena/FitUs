@@ -87,6 +87,24 @@ nav {
     margin: 50px auto 0;
     max-width: 59%;
 }
+.card-container a.card-item {
+    text-decoration: none;         /* Removes underline */
+    color: inherit;                /* Keeps text color consistent */
+    display: flex;                 /* Ensures layout stays intact */
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.card-container a.card-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds hover effect */
+    cursor: pointer;
+}
 
 .card-item {
     background: white;

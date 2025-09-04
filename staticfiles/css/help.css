@@ -88,9 +88,9 @@ nav {
     max-width: 59%;
 }
 .card-container a.card-item {
-    text-decoration: none;         /* Removes underline */
-    color: inherit;                /* Keeps text color consistent */
-    display: flex;                 /* Ensures layout stays intact */
+    text-decoration: none;         
+    color: inherit;                
+    display: flex;                 
     flex-direction: row;
     align-items: center;
     gap: 15px;
@@ -102,7 +102,7 @@ nav {
 }
 
 .card-container a.card-item:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds hover effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
     cursor: pointer;
 }
 
