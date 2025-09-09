@@ -18,7 +18,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensures it stays above other elements */
+    z-index: 1000; 
 }
 
 .workout {
@@ -590,7 +590,7 @@ a.training-cta-button {
     top: 10px;
     width: 60px;
     height: 60px;
-    border-radius: 50%; /* Makes it a perfect circle */
+    border-radius: 50%; 
     display: flex;
     align-items: center;
     justify-content: center;
