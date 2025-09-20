@@ -8,20 +8,24 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
 </head>
 <body>
 
 <div class="container">
     <img src="{% static 'Images/logo.png' %}" alt="Freeletics Logo" class="logo">
-    <h1>Welcome back</h1>
-    <p>Don't have a Fit Us account? <a href="{% url 'Accounts:reg' %}">Sign up for free</a></p>
+    <h1>Join FitUs Today</h1>
+   <p>Already have a FitUs Account? <a href="{% url 'Accounts:login' %}">Login Here for free</a></p>
+
+
+
+ <a href="#" class="btn email-link">SignUp in with Email</a>
 
     <button class="btn google-btn">
-        <img src="{% static 'Images/google.svg' %}" alt="Google Logo" class="icon"> Log in with Google
+        <img src="{% static 'Images/google.svg' %}" alt="Google Logo" class="icon"> Sign Up  with Google
     </button>
 
-    <a href="#" class="btn email-link">Log in with Email</a>
+
 </div>
 
 </body>
