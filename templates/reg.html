@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 
 {% block body %}
 
@@ -21,9 +22,13 @@
 
  <a href="#" class="btn email-link">SignUp in with Email</a>
 
-    <button class="btn google-btn">
-        <img src="{% static 'Images/google.svg' %}" alt="Google Logo" class="icon"> Sign Up  with Google
+    <a href="{% provider_login_url 'google' %}">
+    <button type="button" class="btn google-btn">
+        <img src="{% static 'Images/google.svg' %}" alt="Google Logo" class="icon">
+        Sign Up with Google
     </button>
+</a>
+
 
 
 </div>
