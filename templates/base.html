@@ -34,15 +34,15 @@
     <ul class="nav-links" id="navLinks">
         <li><a href="{% url 'UI:training' %}">Training</a></li>
         <li><a href="{% url 'UI:nutrition' %}">Nutrition</a></li>
-        <li><a href="{% url 'Accounts:shop' %}">Shop</a></li>
+        <li><a href="{% url 'accounts:shop' %}">Shop</a></li>
         <li><a href="{% url 'UI:help' %}">Help center</a></li>
     </ul>
 
     <div class="nav-right">
     <span class="hide-on-mobile">EN</span>
-    <a href="{% url 'Accounts:login' %}" class="login">Log In</a>
+    <a href="{% url 'accounts:login' %}" class="login">Log In</a>
     {% if request.path != '/get/' %}
-        <a href="{% url 'Accounts:get' %}" class="start-now hide-on-mobile">Start now →</a>
+        <a href="{% url 'accounts:get' %}" class="start-now hide-on-mobile">Start now →</a>
     {% endif %}
 </div>
 
