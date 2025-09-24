@@ -1,6 +1,7 @@
 import os
 from django.urls import reverse_lazy
 
+
 """
 Django settings for FitUs project.
 
@@ -41,22 +42,39 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'UI',
+    'accounts.apps.AccountsConfig',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'UI',
-    'accounts',
 
 ]
 SITE_ID = 1
+SOCIALACCOUNT_ADAPTER = "accounts.adapters.MySocialAccountAdapter"
+
+
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',            # default
     'allauth.account.auth_backends.AuthenticationBackend',  # allauth
 ]
 
-SOCIALACCOUNT_ADAPTER = "accounts.adapters.MySocialAccountAdapter"
+
+
+# Login methods allowed
+ACCOUNT_LOGIN_METHODS = {"email"}   # replaces ACCOUNT_AUTHENTICATION_METHOD
+
+# Signup fields required ( * = required )
+ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
+# Social login behavior
+SOCIALACCOUNT_AUTO_SIGNUP = True     # auto-create user after Google login
+SOCIALACCOUNT_LOGIN_ON_GET = True    # login immediately after callback
+
+
 
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
@@ -149,11 +167,10 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_URL = 'account_login'      # allauth login view
+LOGIN_URL = 'accounts:login'             # allauth login view
 LOGOUT_URL = 'account_logout'    # allauth logout view
 LOGIN_REDIRECT_URL = reverse_lazy('UI:home')   # send to ui:home
 LOGOUT_REDIRECT_URL = reverse_lazy('UI:home')
-SOCIALACCOUNT_LOGIN_ON_GET = True
 
 
 

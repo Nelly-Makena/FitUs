@@ -2,6 +2,16 @@
 {% load static %}
 
 {% block body %}
+{% if messages %}
+  <div class="messages">
+    {% for message in messages %}
+      <div class="message {{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
  <div class="video-container">
         <video autoplay loop muted playsinline id="background-video">
             <source src="{% static 'Vedios/gyym.mp4' %}" type="video/mp4">

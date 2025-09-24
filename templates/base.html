@@ -38,15 +38,30 @@
         <li><a href="{% url 'UI:help' %}">Help center</a></li>
     </ul>
 
-    <div class="nav-right">
+   <div class="nav-right">
     <span class="hide-on-mobile">EN</span>
+    {% if user.is_authenticated %}
+    <a href="{% url 'accounts:logout' %}" class="login">Log Out</a>
+{% else %}
     <a href="{% url 'accounts:login' %}" class="login">Log In</a>
+{% endif %}
+
     {% if request.path != '/get/' %}
         <a href="{% url 'accounts:get' %}" class="start-now hide-on-mobile">Start now →</a>
     {% endif %}
 </div>
 
 </nav>
+{% if messages %}
+  <div class="messages">
+    {% for message in messages %}
+      <div class="message {{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
 
 
 

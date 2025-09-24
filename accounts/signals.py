@@ -1,25 +1,15 @@
 # accounts/signals.py
-from django.contrib import messages
-from django.contrib.auth import get_user_model
-from django.http import HttpResponseRedirect
-from allauth.socialaccount.signals import pre_social_login
+from django.contrib.auth.signals import user_logged_in, user_logged_out
 from django.dispatch import receiver
+from django.contrib import messages
+print("hello bitch !")
+@receiver(user_logged_in)
+def on_login(sender, request, user, **kwargs):
+    print("SIGNAL FIRED 🚀")
+    name = user.get_full_name() or user.username
+    messages.success(request, f"Successfully logged in as {name} ✅")
 
-User = get_user_model()
 
-@receiver(pre_social_login)
-def check_existing_user(sender, request, sociallogin, **kwargs):
-    email = sociallogin.account.extra_data.get("email")
-    print("🔴 Google returned:", sociallogin.account.extra_data)
-    print("🔴 Extracted email:", email)
-
-    if email:
-        try:
-            # If user already exists, connect the Google login
-            user = User.objects.get(email=email)
-            sociallogin.connect(request, user)
-            return  # ✅ existing user can log in normally
-        except User.DoesNotExist:
-            # ❌ Block new signup, redirect back to login page
-            messages.error(request, "This email already exists. Please log in instead.")
-            return HttpResponseRedirect("/login/")  #redirect
+@receiver(user_logged_out)
+def on_logout(sender, request, user, **kwargs):
+    messages.info(request, "You have logged out 👋")
