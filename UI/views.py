@@ -4,7 +4,6 @@ from django.contrib import messages
 
 
 def home_view(request):
-    messages.info(request, "Test message 👋")
     context = {}
     return render(request, 'home.html', context)
 
