@@ -5,8 +5,14 @@ from django.contrib.auth import logout
 from django.shortcuts import redirect
 
 def logout_view(request):
-    logout(request)  # clears the session
-    return redirect('UI:home')  # redirect to home page
+    logout(request)
+    return redirect('accounts:post_logout')
+
+def post_logout(request):
+    messages.info(request, "You have logged out, see you soon!!")
+    return redirect('UI:home')
+
+
 def login_view(request):
     context = {}
     return render(request, 'login.html', context)

@@ -2,16 +2,6 @@
 {% load static %}
 
 {% block body %}
-{% if messages %}
-  <div class="messages">
-    {% for message in messages %}
-      <div class="message {{ message.tags }}">
-        {{ message }}
-      </div>
-    {% endfor %}
-  </div>
-{% endif %}
-
  <div class="video-container">
         <video autoplay loop muted playsinline id="background-video">
             <source src="{% static 'Vedios/gyym.mp4' %}" type="video/mp4">
@@ -182,5 +172,23 @@
 
 
 <script src="{% static 'js/home.js' %}"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const messages = document.querySelectorAll(".message");
+    if (messages.length > 0) {
+        setTimeout(() => {
+            messages.forEach(msg => {
+                msg.style.transition = "opacity 1s"; // fade effect
+                msg.style.opacity = 0;
+                setTimeout(() => {
+                    msg.remove();
+                }, 1000); // remove after fade
+            });
+        }, 6000); // 6 seconds before fading
+    }
+});
+</script>
+
 
 {% endblock %}

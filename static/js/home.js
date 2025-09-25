@@ -1,3 +1,7 @@
+setTimeout(() => {
+    document.querySelectorAll(".message").forEach(el => el.remove());
+  }, 6000);
+
 function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("active");
 }

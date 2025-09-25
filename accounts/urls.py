@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import login_view,shop_view,get_view,reg_view,logout_view
+from .views import login_view,shop_view,get_view,reg_view,logout_view,post_logout
 
 app_name = 'accounts'
 
@@ -9,5 +9,7 @@ urlpatterns = [
     path('login/',login_view,name='login'),
     path('reg/',reg_view,name='reg'),
     path('logout/', logout_view, name='logout'),
+    path("post-logout/", post_logout, name="post_logout"),
+
 
 ]
