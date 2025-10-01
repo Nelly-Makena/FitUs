@@ -3,8 +3,8 @@ body {
   background: #1e2a2f;
   color: white;
   display: flex;
-  justify-content: flex-start; /* left aligned */
-  align-items: center; /* vertically center */
+  justify-content: flex-start;
+  align-items: center; 
   height: 100vh;
   padding: 40px;
 }
@@ -40,11 +40,11 @@ p {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  margin-bottom: 40px; /* space before buttons */
+  margin-bottom: 40px; 
 }
 
 .input-field {
-  width: 150px; /* shorter input */
+  width: 150px; 
   font-size: 2rem;
   text-align: left;
   border: none;
@@ -67,7 +67,7 @@ p {
 
 .btn {
   padding: 15px 30px;
-  border-radius: 0; /* removed radius */
+  border-radius: 0; 
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -86,7 +86,6 @@ p {
   background: #333;
 }
 
-/* Next button: white bg, black text */
 .btn.next {
   background: white;
   color: black;
@@ -96,7 +95,6 @@ p {
   color: white;
 }
 
-/* Finish button same as Next */
 .btn.finish {
   background: white;
   color: black;
