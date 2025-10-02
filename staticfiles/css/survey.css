@@ -3,8 +3,8 @@ body {
   background: #1e2a2f;
   color: white;
   display: flex;
-  justify-content: flex-start; /* left aligned */
-  align-items: center; /* vertically center */
+  justify-content: flex-start; 
+  align-items: center; 
   height: 100vh;
   padding: 40px;
 }
