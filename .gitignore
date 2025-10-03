@@ -1,0 +1,29 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Static & media (optional, if collected externally)
+staticfiles/
+media/
