@@ -24,6 +24,4 @@ db.sqlite3
 # Environment variables
 .env
 
-# Static & media (optional, if collected externally)
-staticfiles/
-media/
+

@@ -1,0 +1,44 @@
+{% load static %}
+{% load socialaccount %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+{% if messages %}
+  <div class="alert-box">
+    {% for message in messages %}
+      <p class="{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+  </div>
+
+{% endif %}
+
+<div class="container">
+    <img src="{% static 'Images/logo.png' %}" alt="Freeletics Logo" class="logo">
+    <h1>Welcome back</h1>
+    <p>Don't have a Fit Us account? <a href="{% url 'accounts:reg' %}">Sign up for free</a></p>
+
+   <a href="{% provider_login_url 'google' %}" class="btn google-btn">
+    <img src="{% static 'Images/google.svg' %}" alt="Google Logo" class="icon">
+    Log in with Google
+</a>
+
+
+    <a href="{% url 'accounts:email_login' %}" class="btn email-link">Log in with Email</a>
+</div>
+
+</body>
+</html>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
