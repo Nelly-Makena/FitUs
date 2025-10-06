@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
-
-
 {% block body %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/help.css' %}">
@@ -136,13 +132,25 @@
     </div>
 
 </section>
-
 <section class="contact-section">
     <div class="form-container">
         <h2>Get in touch with us</h2>
         <p>Our friendly team would love to connect with you</p>
 
-        <form action="#" method="post">
+        <!-- Display Django messages here -->
+        {% if messages %}
+        <div class="form-messages">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form action="{% url 'accounts:help' %}" method="post" id="contactForm">
+            {% csrf_token %}
+
             <label for="name">Your name *</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -155,10 +163,10 @@
             <label for="message">Message *</label>
             <textarea id="message" name="message" placeholder="Your message" required></textarea>
 
-<label class="terms">
-    <input type="checkbox" id="terms" required>
-    <span>By sending this form you agree to our <a href="#">Terms and Privacy policy</a> (required)</span>
-</label>
+            <label class="terms">
+                <input type="checkbox" id="terms" name="terms" value="agreed" required>
+                <span>By sending this form you agree to our <a href="#">Terms and Privacy policy</a> (required)</span>
+            </label>
 
             <button type="submit">Send message</button>
         </form>
@@ -168,8 +176,6 @@
         <img src="{% static 'Images/help_pic.jpg' %}" alt="Team Image">
     </div>
 </section>
-
-
 <script src="{% static 'js/help.js' %}"></script>
 
 
