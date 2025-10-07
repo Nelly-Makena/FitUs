@@ -2,6 +2,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
+from .models import Contact
 
 User = get_user_model()
 
@@ -36,3 +37,47 @@ class EmailRegistrationForm(forms.Form):
 class EmailLoginForm(forms.Form):
     email = forms.EmailField(label="Email")
     password = forms.CharField(label="Password", widget=forms.PasswordInput)
+
+
+class ContactForm(forms.ModelForm):
+    terms = forms.BooleanField(
+        required=True,
+        error_messages={'required': 'You must agree to the terms and privacy policy.'},
+        widget=forms.CheckboxInput(attrs={
+            'id': 'terms',
+        })
+    )
+
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'phone', 'message']
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Your Name',
+                'id': 'name',
+            }),
+            'email': forms.EmailInput(attrs={
+                'placeholder': 'your@email.com',
+                'id': 'email',
+            }),
+            'phone': forms.TextInput(attrs={
+                'placeholder': '+254-737-000-987',
+                'id': 'phone',
+            }),
+            'message': forms.Textarea(attrs={
+                'placeholder': 'Your message',
+                'id': 'message',
+            }),
+        }
+        labels = {
+            'name': 'Your name *',
+            'email': 'Your email *',
+            'phone': 'Phone number *',
+            'message': 'Message *',
+        }
+
+    def clean_phone(self):
+        phone = self.cleaned_data.get('phone')
+        if phone and len(phone) < 10:
+            raise ValidationError("Please enter a valid phone number.")
+        return phone

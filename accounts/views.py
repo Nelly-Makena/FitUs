@@ -6,7 +6,7 @@ from django.contrib.auth import logout, login, authenticate
 from django.core.mail import send_mail
 from django.conf import settings
 
-from .forms import EmailRegistrationForm, EmailLoginForm
+from .forms import EmailRegistrationForm, EmailLoginForm, ContactForm
 
 def logout_view(request):
     logout(request)
@@ -81,55 +81,41 @@ def reg_view(request):
 @login_required
 def help_view(request):
     if request.method == 'POST':
-        # Get form data
-        name = request.POST.get('name', '').strip()
-        email = request.POST.get('email', '').strip()
-        phone = request.POST.get('phone', '').strip()
-        message = request.POST.get('message', '').strip()
-        terms = request.POST.get('terms')
-
-        # Validate required fields
-        if not all([name, email, phone, message, terms]):
-            messages.error(request, 'Please fill in all required fields and accept the terms.')
-            return render(request, 'help.html')
-
-        # Basic email validation
-        if '@' not in email or '.' not in email.split('@')[-1]:
-            messages.error(request, 'Please enter a valid email address.')
-            return render(request, 'help.html')
-
-        try:
-            # Save to database
-            Contact.objects.create(
-                name=name,
-                email=email,
-                phone=phone,
-                message=message
-            )
-
-            # Send confirmation email to user (optional but recommended)
+        form = ContactForm(request.POST)
+        if form.is_valid():
             try:
-                send_mail(
-                    "We received your message - FitUs Support",
-                    f"Hello {name},\n\n"
-                    f"Thank you for contacting FitUs support. We have received your message:\n\n"
-                    f"{message}\n\n"
-                    f"Our team will get back to you shortly at {email}.\n\n"
-                    f"Best regards,\n"
-                    f"FitUs Support Team",
-                    settings.DEFAULT_FROM_EMAIL,
-                    [email],
-                    fail_silently=True,
-                )
+                # Save the contact form
+                contact = form.save()
+
+                # Send confirmation email to user
+                try:
+                    send_mail(
+                        "We received your message - FitUs Support",
+                        f"Hello {contact.name},\n\n"
+                        f"Thank you for contacting FitUs support. We have received your message:\n\n"
+                        f"{contact.message}\n\n"
+                        f"Our team will get back to you shortly at {contact.email}.\n\n"
+                        f"Best regards,\n"
+                        f"FitUs Support Team",
+                        settings.DEFAULT_FROM_EMAIL,
+                        [contact.email],
+                        fail_silently=True,
+                    )
+                except Exception as e:
+                    print(f"Email sending failed: {e}")
+
+                messages.success(request, 'Thank you! Your message has been sent. You will hear back shortly.')
+                return redirect('accounts:help')
+
             except Exception as e:
-                print(f"Email sending failed: {e}")
+                print(f"Database error: {e}")
+                messages.error(request, 'An error occurred while sending your message. Please try again.')
+        else:
+            # Display form validation errors
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{error}")
+    else:
+        form = ContactForm()
 
-            messages.success(request, 'Thank you! Your message has been sent. You will hear back shortly.')
-            return redirect('accounts:help')
-
-        except Exception as e:
-            print(f"Database error: {e}")
-            messages.error(request, 'An error occurred while sending your message. Please try again.')
-            return render(request, 'help.html')
-
-    return render(request, 'help.html')
+    return render(request, 'help.html', {'form': form})
