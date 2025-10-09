@@ -16,10 +16,6 @@ def training_view(request):
 def nutrition_view(request):
     context = {}
     return render(request, 'nutrition.html', context)
-@login_required
-def help_view(request):
-    context = {}
-    return render(request, 'help.html', context)
 
 @login_required
 def progress_view(request):

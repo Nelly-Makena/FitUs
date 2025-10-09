@@ -322,7 +322,6 @@ button:hover {
 }
 
 /* Message Alert Styles - Add this to help.css */
-
 .form-messages {
     margin: 20px 0;
 }
@@ -333,19 +332,6 @@ button:hover {
     border-radius: 5px;
     font-size: 16px;
     font-weight: 500;
-    letter-spacing: 0.5px;
-    animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .alert-success {
@@ -360,28 +346,11 @@ button:hover {
     border: 1px solid #f5c6cb;
 }
 
-.alert-info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-    border: 1px solid #bee5eb;
-}
-
-.alert-warning {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeaa7;
-}
-
-/* Form error styling */
 .error {
     color: #dc3545;
     font-size: 14px;
     margin-top: 5px;
     display: block;
-}
-
-form input.error, form textarea.error {
-    border-color: #dc3545;
 }
 
 @media screen and (max-width: 768px) {

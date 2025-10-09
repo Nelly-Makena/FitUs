@@ -57,9 +57,16 @@ def email_login_view(request):
                 messages.success(request, "Logged in successfully.")
                 return redirect("UI:home")
             else:
+                # Show error on the SAME page
                 messages.error(request, "Invalid email or password.")
+                # Stay on email_login.html, not redirect
+        else:
+            # Show form validation errors
+            messages.error(request, "Please correct the errors below.")
     else:
         form = EmailLoginForm()
+
+    # Always render email_login.html (with messages if any)
     return render(request, "email_login.html", {"form": form})
 
 
