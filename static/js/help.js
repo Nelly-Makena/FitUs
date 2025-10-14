@@ -59,4 +59,30 @@ document.addEventListener("DOMContentLoaded", function () {
         const query = searchInput.value.trim().toLowerCase();
         filterCards(query);
     });
+
+    // Auto-hide messages after 10 seconds
+    const messages = document.querySelectorAll('.alert, .message');
+
+    messages.forEach(function(message) {
+        // Auto-hide after 10 seconds
+        setTimeout(function() {
+            message.style.transition = 'opacity 0.5s ease-out';
+            message.style.opacity = '0';
+
+            // Remove from DOM after fade out
+            setTimeout(function() {
+                message.remove();
+            }, 500);
+        }, 10000); // 10 seconds
+
+        // Optional: Allow manual close by clicking
+        message.style.cursor = 'pointer';
+        message.addEventListener('click', function() {
+            message.style.transition = 'opacity 0.3s ease-out';
+            message.style.opacity = '0';
+            setTimeout(function() {
+                message.remove();
+            }, 300);
+        });
+    });
 });

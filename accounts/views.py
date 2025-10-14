@@ -70,10 +70,7 @@ def email_login_view(request):
     return render(request, "email_login.html", {"form": form})
 
 
-@login_required
-def shop_view(request):
-    context = {}
-    return render(request, 'shop.html', context)
+
 
 @login_required
 def get_view(request):

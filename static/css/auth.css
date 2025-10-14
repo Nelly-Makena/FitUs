@@ -15,7 +15,7 @@ body {
 .container {
     text-align: center;
     width: 100%;
-    max-width: 500px;  /* wider container */
+    max-width: 500px;  
     padding: 20px;
 }
 
@@ -26,7 +26,7 @@ body {
 
 h1 {
     margin-bottom: 20px;
-    font-size: 42px; /* bigger headline */
+    font-size: 42px; 
 }
 
 p {
@@ -44,7 +44,7 @@ form {
 input {
     padding: 20px;
     border: none;
-    border-radius: 0;   /* no rounded corners */
+    border-radius: 0;   
     font-size: 20px;
     width: 100%;
     box-sizing: border-box;
@@ -59,7 +59,7 @@ button {
     padding: 20px;
     font-size: 22px;
     cursor: pointer;
-    border-radius: 0;  /* no rounded corners */
+    border-radius: 0;  
     transition: background 0.3s ease;
 }
 
@@ -76,7 +76,6 @@ button:hover {
     text-align: left;
 }
 
-/* ✅ Mobile screens */
 @media screen and (max-width: 768px) {
     body {
         font-size: 20px;
