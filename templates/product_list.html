@@ -1,0 +1,81 @@
+{% extends 'base_shop.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block extra_css %}
+<style>
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .product-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    background-color: transparent;
+
+  }
+
+  .product-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain; /* show full image without cropping */
+  background-color: transparent; /* remove grey fill */
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  display: block;
+  border: none;
+}
+
+  .product-card:hover .product-image {
+    transform: scale(1.02);
+  }
+
+  .product-name {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    letter-spacing: 0.2px;
+  }
+
+  .product-price {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.3px;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 0;
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="products-grid">
+  {% for product in products %}
+    <a href="{% url 'shop:product_detail' product.slug %}" class="product-card">
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+      <h3 class="product-name">{{ product.name }}</h3>
+      <p class="product-price">KSh {{ product.price }}</p>
+    </a>
+  {% empty %}
+    <div class="empty-state">
+      <p>No products available.</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

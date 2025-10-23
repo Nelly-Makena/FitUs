@@ -1,0 +1,87 @@
+{% extends 'base_shop.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block extra_css %}
+<style>
+  .checkout-container {
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+
+  .checkout-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+  }
+
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .checkout-form p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .checkout-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .checkout-form input,
+  .checkout-form textarea {
+    padding: 0.85rem;
+    border: 1px solid #e5e5e5;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 400;
+    transition: border-color 0.2s;
+  }
+
+  .checkout-form input:focus,
+  .checkout-form textarea:focus {
+    outline: none;
+    border-color: #000;
+  }
+
+  .checkout-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-actions {
+    margin-top: 1rem;
+  }
+
+  .errorlist {
+    list-style: none;
+    color: #d00;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="checkout-container">
+  <h2 class="checkout-title">Checkout</h2>
+
+  <form method="post" class="checkout-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="form-actions">
+      <button type="submit" class="btn">Place Order</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

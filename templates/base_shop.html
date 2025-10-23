@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Shop{% endblock %}</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-center {
+      flex: 1;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-categories {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-categories a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .nav-categories a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #000;
+      transition: width 0.3s ease;
+    }
+
+    .nav-categories a:hover::after,
+    .nav-categories a.active::after {
+      width: 100%;
+    }
+
+    .nav-categories a:hover,
+    .nav-categories a.active {
+      color: #000;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .cart-link {
+      color: #000;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.2s;
+    }
+
+    .cart-link:hover {
+      opacity: 0.7;
+    }
+
+    .cart-count {
+      background: #000;
+      color: #fff;
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    .btn-secondary:hover {
+      background: #f5f5f5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-categories {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="{% url 'shop:product_list' %}" class="nav-logo">Fitus Shop</a>
+
+      <div class="nav-center">
+        <ul class="nav-categories">
+          <li><a href="{% url 'shop:product_list' %}" {% if not current_category %}class="active"{% endif %}>All</a></li>
+          {% for category in categories %}
+            <li><a href="{% url 'shop:category_products' category.slug %}" {% if current_category.id == category.id %}class="active"{% endif %}>{{ category.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <a href="{% url 'shop:cart_detail' %}" class="cart-link">
+          Cart
+          {% if cart.get_total_quantity > 0 %}
+            <span class="cart-count">{{ cart.get_total_quantity }}</span>
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

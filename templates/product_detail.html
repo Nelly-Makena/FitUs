@@ -1,0 +1,78 @@
+{% extends 'base_shop.html' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block extra_css %}
+<style>
+  .product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+
+  .product-image-detail {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .product-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .product-description {
+    color: #4a4a4a;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    font-weight: 400;
+  }
+
+  .product-price-detail {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 0.3px;
+  }
+
+  .product-actions {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .product-detail {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="product-detail">
+  <div>
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image-detail">
+  </div>
+
+  <div class="product-info">
+    <h1 class="product-title">{{ product.name }}</h1>
+    <p class="product-description">{{ product.description }}</p>
+    <p class="product-price-detail">KSh {{ product.price }}</p>
+
+    <div class="product-actions">
+      <a href="{% url 'shop:cart_add' product.id %}" class="btn">Add to Cart</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

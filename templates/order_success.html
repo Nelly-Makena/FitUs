@@ -1,0 +1,60 @@
+{% extends 'base_shop.html' %}
+
+{% block title %}Order Successful{% endblock %}
+
+{% block extra_css %}
+<style>
+  .success-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    text-align: center;
+  }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: #000;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .success-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+  }
+
+  .success-details {
+    color: #4a4a4a;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  .success-actions {
+    margin-top: 3rem;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="success-container">
+  <div class="success-icon">✓</div>
+
+  <h2 class="success-title">Order Successful</h2>
+
+  <p class="success-details">Thank you for your order, {{ order.full_name }}.</p>
+  <p class="success-details">Order ID: #{{ order.id }}</p>
+
+  <div class="success-actions">
+    <a href="{% url 'shop:product_list' %}" class="btn">Continue Shopping</a>
+  </div>
+</div>
+{% endblock %}

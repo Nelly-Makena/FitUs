@@ -1,0 +1,151 @@
+{% extends 'base_shop.html' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block extra_css %}
+<style>
+  .cart-container {
+    max-width: 900px;
+    margin: 2rem auto;
+  }
+
+  .cart-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+  }
+
+  .cart-items {
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .cart-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    align-items: center;
+  }
+
+  .cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    background: #fff;
+  }
+
+  .cart-item-details h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    letter-spacing: 0.2px;
+  }
+
+  .cart-item-details p {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .cart-item-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 0.3px;
+  }
+
+  .cart-item-remove {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .cart-item-remove:hover {
+    color: #000;
+  }
+
+  .cart-summary {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cart-total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  .empty-cart {
+    text-align: center;
+    padding: 4rem 0;
+    color: #999;
+  }
+
+  .empty-cart a {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .cart-item {
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+    }
+
+    .cart-item-price {
+      grid-column: 2;
+    }
+
+    .cart-item-remove {
+      grid-column: 2;
+      justify-self: start;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="cart-container">
+  <h2 class="cart-title">Your Cart</h2>
+
+  {% if cart %}
+    <div class="cart-items">
+      {% for item in cart %}
+        <div class="cart-item">
+          <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="cart-item-image">
+
+          <div class="cart-item-details">
+            <h3>{{ item.product.name }}</h3>
+            <p>Quantity: {{ item.quantity }}</p>
+          </div>
+
+          <div class="cart-item-price">
+            KSh {{ item.total_price }}
+          </div>
+
+          <a href="{% url 'shop:cart_remove' item.product.id %}" class="cart-item-remove">Remove</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="cart-summary">
+      <span class="cart-total">Total: KSh {{ cart.get_total_price }}</span>
+      <a href="{% url 'shop:checkout' %}" class="btn">Proceed to Checkout</a>
+    </div>
+  {% else %}
+    <div class="empty-cart">
+      <p>Your cart is empty.</p>
+      <a href="{% url 'shop:product_list' %}" class="btn">Continue Shopping</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
