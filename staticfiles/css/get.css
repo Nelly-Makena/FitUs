@@ -37,15 +37,16 @@ p {
   background: transparent;
   color: #fff;
   border: none;
-  padding: 15px 25px;
+  padding: 18px 35px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 17px;
   position: relative;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, transform 0.3s ease;
 }
 
 .extra-plan-buttons button:hover {
   background: #333;
+  transform: scale(1.05);
 }
 
 .extra-plan-buttons .extra-active {
@@ -142,6 +143,98 @@ p {
   color: #fff;
 }
 
+/* === Checkout Modal Styles === */
+.extra-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.extra-modal-content {
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.extra-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.extra-close:hover {
+  color: #b900b4;
+}
+
+/* === Modal Form Enhancements === */
+.extra-modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.extra-modal-content input {
+  width: 90%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+}
+
+.extra-modal-content .extra-submit {
+  background: linear-gradient(to right, #4e00c2, #b900b4);
+  color: #fff;
+  padding: 16px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 17px;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+
+.extra-modal-content .extra-submit:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+#extra-processing {
+  margin-top: 25px;
+  font-size: 17px;
+  color: #4e00c2;
+  font-weight: bold;
+}
+
+#extra-success {
+  margin-top: 25px;
+  font-size: 18px;
+  color: #b900b4;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
   h1 {
     font-size: 35px;
@@ -162,7 +255,7 @@ p {
   }
 
   .extra-plan-buttons button {
-    padding: 12px 18px;
+    padding: 12px 20px;
     font-size: 14px;
   }
 
@@ -219,5 +312,3 @@ p {
     font-size: 14px;
   }
 }
-
-

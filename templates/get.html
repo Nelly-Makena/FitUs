@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-
-
 {% block body %}
-
 <link rel="stylesheet" type="text/css" href="{% static 'css/get.css' %}">
 
 <div class="extra-pricing-section">
@@ -19,59 +15,52 @@
     </div>
 
     <div class="extra-cards-container">
+      <div class="extra-card">
+        <h2>Training Coach</h2>
+        <p class="extra-desc">Build muscle or burn fat with high-intensity training</p>
+        <p class="extra-old-price">was Ksh 83,999.99</p>
+        <p class="extra-price">Ksh 41,999.99</p>
+        <p class="extra-access">Lifetime access</p>
+        <button class="extra-card-btn">Get Access</button>
+      </div>
 
-     <div class="extra-card">
-  <h2>Training Coach</h2>
-  <p class="extra-desc">Build muscle or burn fat with high-intensity training</p>
-  <p class="extra-old-price">was Ksh 83,999.99</p>
-  <p class="extra-price">Ksh 41,999.99</p>
-  <p class="extra-access">Lifetime access</p>
-  <button class="extra-card-btn">Get Access</button>
+      <div class="extra-card">
+        <h2>Training and Nutrition Bundle</h2>
+        <p class="extra-desc">Combine training and nutrition coaches to train smarter and eat better</p>
+        <p class="extra-old-price">was Ksh 97,999.99</p>
+        <p class="extra-price">Ksh 48,999.99</p>
+        <p class="extra-access">Lifetime access</p>
+        <button class="extra-card-btn">Get Access Now</button>
+      </div>
+    </div>
 </div>
 
-<div class="extra-card">
-  <h2>Training and Nutrition Bundle</h2>
-  <p class="extra-desc">Combine training and nutrition coaches to train smarter and eat better</p>
-  <p class="extra-old-price">was Ksh 97,999.99</p>
-  <p class="extra-price">Ksh 48,999.99</p>
-  <p class="extra-access">Lifetime access</p>
-  <button class="extra-card-btn">Get Access Now</button>
-</div>
+<!-- ✅ Updated Checkout Modal -->
+<div id="checkoutModal" class="extra-modal">
+  <div class="extra-modal-content">
+    <span class="extra-close">&times;</span>
+    <h2 id="selected-plan-title">Demo Checkout</h2>
+    <p id="selected-plan-desc">Complete your demo purchase (no payment required).</p>
 
+    <form id="demoCheckoutForm">
+      <input type="text" placeholder="Full Name (as on card)" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="4242 4242 4242 4242" required>
+      <input type="text" placeholder="MM/YY" required>
+      <input type="text" placeholder="CVC" required>
+
+      <button type="submit" class="extra-submit">Complete Purchase</button>
+    </form>
+
+    <p id="extra-processing" style="display:none;color:#4e00c2;font-weight:bold;">
+      💳 Processing payment... please wait
+    </p>
+    <p id="extra-success" style="display:none;color:#b900b4;font-weight:bold;">
+      Success! You now have access.
+    </p>
   </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="{% static 'js/get.js' %}"></script>
 {% endblock %}
-
 {% block footer %}{% endblock %}
